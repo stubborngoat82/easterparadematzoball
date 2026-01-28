@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Join Our Community - Easter Parade Matzo Ball</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <style>
+        .cinzel { font-family: 'Cinzel', serif; }
+        
+        body {
+            font-family: 'Cinzel', serif;
+        }
+        
+        /* Background with image and overlay */
+        .bg-with-overlay {
+            background-image: 
+                linear-gradient(45deg, rgba(255, 196, 0, 0.7), rgba(255, 64, 129, 0.6), rgba(138, 43, 226, 0.7)),
+                url('your-background-image.jpg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            background-repeat: no-repeat;
+        }
+        
+        .card-hover {
+            transition: all 0.3s ease;
+        }
+        
+        .card-hover:hover {
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+        }
+        
+        .slide-in {
+            animation: slideIn 1s ease-out;
+        }
+        
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .pulse {
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.7; }
+        }
+        
+        .float {
+            animation: float 3s ease-in-out infinite;
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            33% { transform: translateY(-20px) rotate(1deg); }
+            66% { transform: translateY(10px) rotate(-1deg); }
+        }
+
+        /* Style the embedded Mailchimp form */
+        .mailchimp-embed iframe {
+            border-radius: 1.5rem !important;
+            border: none !important;
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04) !important;
+        }
+    </style>
+</head>
+<body class="min-h-screen bg-with-overlay relative overflow-x-hidden">
+    
+    <!-- Header with Logo and Navigation -->
+    <header class="relative z-40 pt-6 pb-2">
+        <div class="text-center mb-6">
+            <div class="inline-block w-24 h-24 mb-4">
+                <img src="logo.png" alt="Easter Parade Matzo Ball Logo" class="w-full h-full object-contain">
+            </div>
+            <h1 class="text-2xl font-bold text-purple-900 cinzel">
+                Easter Parade Matzo Ball
+            </h1>
+        </div>
+        
+        <!-- Navigation -->
+        <nav class="px-6">
+            <div class="max-w-7xl mx-auto">
+                <div class="flex justify-center">
+                    <div class="flex flex-wrap justify-center space-x-2 md:space-x-6">
+                        <a href="easter-parade-website.html" class="px-4 py-2 rounded-full font-medium transition-all duration-300 text-purple-900 hover:bg-white hover:bg-opacity-70 cinzel">
+                            🏠 Home
+                        </a>
+                        <a href="hatmaking.html" class="px-4 py-2 rounded-full font-medium transition-all duration-300 text-purple-900 hover:bg-white hover:bg-opacity-70 cinzel">
+                            👒 Hat Making
+                        </a>
+                        <a href="photos.html" class="px-4 py-2 rounded-full font-medium transition-all duration-300 text-purple-900 hover:bg-white hover:bg-opacity-70 cinzel">
+                            📸 Photos
+                        </a>
+                        <a href="joinus.html" class="px-4 py-2 rounded-full font-medium transition-all duration-300 bg-white text-purple-700 shadow-lg scale-105 cinzel">
+                            💌 Join Us
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main class="relative z-30 px-6 pb-12 slide-in">
+        <div class="max-w-5xl mx-auto">
+            <!-- Page Header -->
+            <section class="text-center mb-16 relative">
+                <h1 class="text-6xl font-bold text-purple-900 mb-6 cinzel">
+                    Join Our Community! 💌
+                </h1>
+                <p class="text-2xl text-purple-700 max-w-4xl mx-auto leading-relaxed cinzel">
+                    Become part of our wonderfully wacky family! Stay connected with our community of hat makers, 
+                    parade enthusiasts, and joy spreaders.
+                </p>
+                
+                <!-- Floating elements -->
+                <div class="absolute left-10 top-0 text-4xl float">💌</div>
+                <div class="absolute right-10 top-20 text-4xl float" style="animation-delay: 1s;">🎪</div>
+            </section>
+
+            <!-- Mailchimp Signup Options -->
+            <section class="mb-16">
+                <div class="bg-white bg-opacity-95 rounded-3xl p-10 shadow-2xl">
+                    <div class="text-center mb-8">
+                        <h2 class="text-4xl font-bold text-purple-900 mb-4 cinzel">
+                            📧 Join Our Mailing List
+                        </h2>
+                        <p class="text-lg text-purple-700 cinzel">
+                            Be the first to know about parade dates, workshop schedules, and special community events!
+                        </p>
+                    </div>
+
+                    <!-- Option 1: Embedded Form -->
+                    <div class="mb-8">
+                        <h3 class="text-2xl font-bold text-purple-900 mb-6 cinzel text-center">
+                            🎨 Quick Sign Up
+                        </h3>
+                        <div class="mailchimp-embed flex justify-center">
+                            <iframe 
+                                src="http://eepurl.com/jx5YG-/" 
+                                width="100%" 
+                                height="400"
+                                style="max-width: 600px;"
+                                frameborder="0">
+                            </iframe>
+                        </div>
+                    </div>
+
+                    <!-- Option 2: Styled Button -->
+                    <div class="text-center">
+                        <p class="text-purple-600 mb-4 cinzel">Or open our signup form in a new window:</p>
+                        <a 
+                            href="http://eepurl.com/jx5YG-/"
+                            target="_blank"
+                            class="inline-block bg-gradient-to-r from-pink-600 to-purple-700 text-white px-12 py-4 rounded-full font-bold text-xl shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300 cinzel"
+                        >
+                            🎉 Open Signup Form
+                        </a>
+                    </div>
+
+                    <div class="mt-8 text-center">
+                        <p class="text-sm text-purple-600 cinzel">
+                            We promise to only send you delightful updates and never spam your inbox! 
+                            You can unsubscribe at any time. 🌈
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Community Benefits -->
+            <section class="mb-16">
+                <h2 class="text-4xl font-bold text-center text-purple-900 mb-12 cinzel">
+                    🌟 Member Benefits
+                </h2>
+                <div class="grid md:grid-cols-3 gap-8">
+                    <div class="bg-pink-300 rounded-3xl p-8 text-center card-hover">
+                        <i data-lucide="sparkles" class="w-16 h-16 text-pink-700 mx-auto mb-6"></i>
+                        <h3 class="text-xl font-bold text-purple-900 mb-4 cinzel">Event Announcements</h3>
+                        <p class="text-purple-800 cinzel">
+                            Be the first to know about parade dates, special celebrations, and surprise events. 
+                            Never miss a moment of community joy!
+                        </p>
+                    </div>
+                    
+                    <div class="bg-green-300 rounded-3xl p-8 text-center card-hover">
+                        <i data-lucide="heart" class="w-16 h-16 text-green-700 mx-auto mb-6"></i>
+                        <h3 class="text-xl font-bold text-purple-900 mb-4 cinzel">Workshop Priority</h3>
+                        <p class="text-purple-800 cinzel">
+                            Early registration for hat-making workshops, exclusive materials access, 
+                            and special member-only advanced classes.
+                        </p>
+                    </div>
+                    
+                    <div class="bg-blue-300 rounded-3xl p-8 text-center card-hover">
+                        <i data-lucide="star" class="w-16 h-16 text-blue-700 mx-auto mb-6"></i>
+                        <h3 class="text-xl font-bold text-purple-900 mb-4 cinzel">Community Stories</h3>
+                        <p class="text-purple-800 cinzel">
+                            Featured hats, behind-the-scenes content, member spotlights, 
+                            and inspiring stories from our creative community.
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- What You'll Receive -->
+            <section class="mb-16">
+                <div class="bg-gradient-to-br from-purple-500 to-indigo-600 rounded-3xl p-8 text-white">
+                    <h2 class="text-3xl font-bold text-center mb-8 cinzel">
+                        📬 What You'll Receive
+                    </h2>
+                    <div class="grid md:grid-cols-2 gap-8">
+                        <div class="space-y-4">
+                            <div class="flex items-center space-x-4">
+                                <div class="bg-white bg-opacity-20 rounded-full p-3">
+                                    <span class="text-2xl">📅</span>
+                                </div>
+                                <div>
+                                    <h3 class="font-bold cinzel text-lg">Monthly Newsletter</h3>
+                                    <p class="cinzel">Community highlights and upcoming events</p>
+                                </div>
+                            </div>
+                            <div class="flex items-center space-x-4">
+                                <div class="bg-white bg-opacity-20 rounded-full p-3">
+                                    <span class="text-2xl">🎨</span>
+                                </div>
+                                <div>
+                                    <h3 class="font-bold cinzel text-lg">Workshop Announcements</h3>
+                                    <p class="cinzel">Early access to hat-making classes</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="space-y-4">
+                            <div class="flex items-center space-x-4">
+                                <div class="bg-white bg-opacity-20 rounded-full p-3">
+                                    <span class="text-2xl">🎪</span>
+                                </div>
+                                <div>
+                                    <h3 class="font-bold cinzel text-lg">Parade Updates</h3>
+                                    <p class="cinzel">Dates, routes, and special activities</p>
+                                </div>
+                            </div>
+                            <div class="flex items-center space-x-4">
+                                <div class="bg-white bg-opacity-20 rounded-full p-3">
+                                    <span class="text-2xl">✨</span>
+                                </div>
+                                <div>
+                                    <h3 class="font-bold cinzel text-lg">Exclusive Content</h3>
+                                    <p class="cinzel">Behind-the-scenes photos and stories</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Social Media & Contact -->
+            <section class="grid md:grid-cols-2 gap-8">
+                <!-- Social Media -->
+                <div class="bg-gradient-to-br from-emerald-500 to-teal-600 rounded-3xl p-8 text-center text-white">
+                    <h3 class="text-3xl font-bold mb-6 cinzel">Follow Our Journey</h3>
+                    <p class="mb-8 cinzel text-lg">
+                        Stay connected between events! Follow us on social media for daily inspiration, 
+                        mini tutorials, and community highlights.
+                    </p>
+                    <div class="space-y-4">
+                        <button class="w-full bg-white bg-opacity-20 hover:bg-opacity-30 px-6 py-4 rounded-2xl font-bold cinzel transition-all duration-300">
+                            📘 Follow on Facebook
+                        </button>
+                        <button class="w-full bg-white bg-opacity-20 hover:bg-opacity-30 px-6 py-4 rounded-2xl font-bold cinzel transition-all duration-300">
+                            📷 Follow on Instagram
+                        </button>
+                        <button class="w-full bg-white bg-opacity-20 hover:bg-opacity-30 px-6 py-4 rounded-2xl font-bold cinzel transition-all duration-300">
+                            🐦 Follow on Twitter
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Contact -->
+                <div class="bg-gradient-to-br from-orange-500 to-red-600 rounded-3xl p-8 text-center text-white">
+                    <h3 class="text-3xl font-bold mb-6 cinzel">Get In Touch</h3>
+                    <p class="mb-8 cinzel text-lg">
+                        Questions? Ideas? Just want to chat about hats? 
+                        We'd love to hear from you!
+                    </p>
+                    <div class="space-y-4">
+                        <div class="bg-white bg-opacity-20 px-6 py-4 rounded-2xl">
+                            <p class="font-bold cinzel">📧 Email Us</p>
+                            <p class="cinzel">info@easterparadematzoball.com</p>
+                        </div>
+                        <div class="bg-white bg-opacity-20 px-6 py-4 rounded-2xl">
+                            <p class="font-bold cinzel">📱 Call/Text</p>
+                            <p class="cinzel">(555) MATZO-HAT</p>
+                        </div>
+                        <div class="bg-white bg-opacity-20 px-6 py-4 rounded-2xl">
+                            <p class="font-bold cinzel">📍 Visit Us</p>
+                            <p class="cinzel">Community Arts Center<br>Main Street Plaza</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="relative z-30 bg-purple-900 text-white py-8 mt-16">
+        <div class="max-w-6xl mx-auto px-6 text-center">
+            <div class="flex justify-center items-center space-x-4 mb-4">
+                <div class="text-3xl">🥯</div>
+                <h3 class="text-2xl font-bold cinzel">
+                    Easter Parade Matzo Ball
+                </h3>
+                <div class="text-3xl">🌸</div>
+            </div>
+            <p class="cinzel">
+                Building community and spreading joy • One member at a time 💌
+            </p>
+            <div class="mt-4 space-x-4">
+                <span class="text-yellow-300">📧 info@easterparadematzoball.com</span>
+                <span class="text-pink-300">📱 (555) MATZO-HAT</span>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Initialize Lucide icons
+        lucide.createIcons();
+    </script>
+</body>
+</html>

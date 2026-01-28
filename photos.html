@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parade Photos - Easter Parade Matzo Ball</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <style>
+        .cinzel { font-family: 'Cinzel', serif; }
+        
+        body {
+            font-family: 'Cinzel', serif;
+        }
+        
+        /* Background with image and overlay */
+        .bg-with-overlay {
+            background-image: 
+                linear-gradient(45deg, rgba(255, 196, 0, 0.7), rgba(255, 64, 129, 0.6), rgba(138, 43, 226, 0.7)),
+                url('your-background-image.jpg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            background-repeat: no-repeat;
+        }
+        
+        .card-hover {
+            transition: all 0.3s ease;
+        }
+        
+        .card-hover:hover {
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+        }
+        
+        .photo-hover {
+            transition: all 0.3s ease;
+        }
+        
+        .photo-hover:hover {
+            transform: scale(1.05);
+            z-index: 10;
+        }
+        
+        .slide-in {
+            animation: slideIn 1s ease-out;
+        }
+        
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Modal styles */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.9);
+        }
+        
+        .modal.show {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .modal-content {
+            max-width: 90%;
+            max-height: 90%;
+        }
+    </style>
+</head>
+<body class="min-h-screen bg-with-overlay relative overflow-x-hidden">
+    
+    <!-- Header with Logo and Navigation -->
+    <header class="relative z-40 pt-6 pb-2">
+        <div class="text-center mb-6">
+            <div class="inline-block w-24 h-24 mb-4">
+                <img src="logo.png" alt="Easter Parade Matzo Ball Logo" class="w-full h-full object-contain">
+            </div>
+            <h1 class="text-2xl font-bold text-purple-900 cinzel">
+                Easter Parade Matzo Ball
+            </h1>
+        </div>
+        
+        <!-- Navigation -->
+        <nav class="px-6">
+            <div class="max-w-7xl mx-auto">
+                <div class="flex justify-center">
+                    <div class="flex flex-wrap justify-center space-x-2 md:space-x-6">
+                        <a href="easter-parade-website.html" class="px-4 py-2 rounded-full font-medium transition-all duration-300 text-purple-900 hover:bg-white hover:bg-opacity-70 cinzel">
+                            🏠 Home
+                        </a>
+                        <a href="hatmaking.html" class="px-4 py-2 rounded-full font-medium transition-all duration-300 text-purple-900 hover:bg-white hover:bg-opacity-70 cinzel">
+                            👒 Hat Making
+                        </a>
+                        <a href="photos.html" class="px-4 py-2 rounded-full font-medium transition-all duration-300 bg-white text-purple-700 shadow-lg scale-105 cinzel">
+                            📸 Photos
+                        </a>
+                        <a href="joinus.html" class="px-4 py-2 rounded-full font-medium transition-all duration-300 text-purple-900 hover:bg-white hover:bg-opacity-70 cinzel">
+                            💌 Join Us
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Modal for enlarged photos -->
+    <div id="photoModal" class="modal">
+        <span class="absolute top-4 right-8 text-white text-4xl cursor-pointer hover:text-gray-300" onclick="closeModal()">&times;</span>
+        <img id="modalImage" class="modal-content">
+    </div>
+
+    <!-- Main Content -->
+    <main class="relative z-30 px-6 pb-12 slide-in">
+        <div class="max-w-7xl mx-auto">
+            <!-- Page Header -->
+            <section class="text-center mb-16">
+                <h1 class="text-6xl font-bold text-purple-900 mb-6 cinzel">
+                    Parade Memories 📸
+                </h1>
+                <p class="text-2xl text-purple-700 max-w-4xl mx-auto leading-relaxed cinzel">
+                    Relive the joy, creativity, and community spirit of our Easter Parade Matzo Ball celebrations! 
+                    Each year brings new hats, new faces, and unforgettable memories.
+                </p>
+            </section>
+
+            <!-- Photo Upload Section -->
+            <section class="bg-gradient-to-br from-yellow-500 to-orange-500 rounded-3xl p-8 mb-16 text-center shadow-xl">
+                <h2 class="text-4xl font-bold text-white mb-6 cinzel">
+                    📷 Share Your Photos!
+                </h2>
+                <p class="text-yellow-100 mb-8 cinzel text-xl max-w-3xl mx-auto">
+                    Did you capture a magical moment? Help us build our community gallery by sharing your parade photos! 
+                    Every image tells a story and adds to our collective memory.
+                </p>
+                <div class="flex flex-wrap justify-center gap-4 mb-8">
+                    <div class="bg-white bg-opacity-20 rounded-2xl p-4 text-center">
+                        <div class="text-3xl mb-2">📱</div>
+                        <p class="text-white cinzel font-bold">Phone Photos Welcome</p>
+                    </div>
+                    <div class="bg-white bg-opacity-20 rounded-2xl p-4 text-center">
+                        <div class="text-3xl mb-2">🎭</div>
+                        <p class="text-white cinzel font-bold">Hat Close-ups Appreciated</p>
+                    </div>
+                    <div class="bg-white bg-opacity-20 rounded-2xl p-4 text-center">
+                        <div class="text-3xl mb-2">👥</div>
+                        <p class="text-white cinzel font-bold">Group Shots Encouraged</p>
+                    </div>
+                </div>
+                <button class="bg-white text-orange-600 px-8 py-4 rounded-full font-bold text-xl shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300 cinzel">
+                    Upload Your Photos
+                </button>
+            </section>
+
+            <!-- 2023 Gallery -->
+            <section class="mb-16">
+                <div class="bg-white bg-opacity-95 rounded-3xl p-8 shadow-xl">
+                    <div class="text-center mb-8">
+                        <h3 class="text-4xl font-bold text-purple-900 mb-4 cinzel">
+                            🌟 2023 Parade Highlights
+                        </h3>
+                        <p class="text-purple-700 cinzel text-lg">
+                            Our most spectacular parade yet! Over 200 participants with incredible hat creations.
+                        </p>
+                    </div>
+                    
+                    <div class="grid md:grid-cols-4 gap-6 mb-8">
+                        <div class="bg-gradient-to-br from-pink-500 to-purple-600 rounded-2xl p-8 text-center card-hover min-h-64 flex flex-col items-center justify-center photo-hover cursor-pointer" onclick="openModal('2023-grand-parade.jpg')">
+                            <i data-lucide="camera" class="w-16 h-16 text-yellow-300 mb-4"></i>
+                            <h4 class="text-white font-bold cinzel text-lg">Grand Parade</h4>
+                            <p class="text-sm text-yellow-200 mt-2 cinzel">The full procession in all its glory</p>
+                        </div>
+                        <div class="bg-gradient-to-br from-green-500 to-teal-600 rounded-2xl p-8 text-center card-hover min-h-64 flex flex-col items-center justify-center photo-hover cursor-pointer" onclick="openModal('2023-hat-contest.jpg')">
+                            <i data-lucide="award" class="w-16 h-16 text-yellow-300 mb-4"></i>
+                            <h4 class="text-white font-bold cinzel text-lg">Hat Contest Winners</h4>
+                            <p class="text-sm text-yellow-200 mt-2 cinzel">Our most creative hat creators</p>
+                        </div>
+                        <div class="bg-gradient-to-br from-blue-500 to-indigo-600 rounded-2xl p-8 text-center card-hover min-h-64 flex flex-col items-center justify-center photo-hover cursor-pointer" onclick="openModal('2023-kids-parade.jpg')">
+                            <i data-lucide="heart" class="w-16 h-16 text-yellow-300 mb-4"></i>
+                            <h4 class="text-white font-bold cinzel text-lg">Kids' Corner</h4>
+                            <p class="text-sm text-yellow-200 mt-2 cinzel">Young hat makers stealing the show</p>
+                        </div>
+                        <div class="bg-gradient-to-br from-orange-500 to-red-600 rounded-2xl p-8 text-center card-hover min-h-64 flex flex-col items-center justify-center photo-hover cursor-pointer" onclick="openModal('2023-behind-scenes.jpg')">
+                            <i data-lucide="settings" class="w-16 h-16 text-yellow-300 mb-4"></i>
+                            <h4 class="text-white font-bold cinzel text-lg">Behind the Scenes</h4>
+                            <p class="text-sm text-yellow-200 mt-2 cinzel">Workshop moments and preparation</p>
+                        </div>
+                    </div>
+                    
+                    <div class="text-center">
+                        <button class="bg-gradient-to-r from-purple-500 to-pink-600 text-white px-8 py-3 rounded-full font-bold shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300 cinzel">
+                            View Complete 2023 Gallery (47 photos)
+                        </button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 2021 Gallery -->
+            <section class="mb-16">
+                <div class="bg-white bg-opacity-95 rounded-3xl p-8 shadow-xl">
+                    <div class="text-center mb-8">
+                        <h3 class="text-4xl font-bold text-purple-900 mb-4 cinzel">
+                            🎪 2021 Parade Memories
+                        </h3>
+                        <p class="text-purple-700 cinzel text-lg">
+                            A year of resilience and creativity! Socially distanced but spiritually connected.
+                        </p>
+                    </div>
+                    
+                    <div class="grid md:grid-cols-3 gap-6 mb-8">
+                        <div class="bg-gradient-to-br from-emerald-400 to-cyan-500 rounded-2xl p-8 text-center card-hover min-h-64 flex flex-col items-center justify-center photo-hover cursor-pointer" onclick="openModal('2021-outdoor-celebration.jpg')">
+                            <i data-lucide="sun" class="w-16 h-16 text-white mb-4"></i>
+                            <h4 class="text-white font-bold cinzel text-lg">Outdoor Celebration</h4>
+                            <p class="text-sm text-blue-100 mt-2 cinzel">Beautiful day in the park</p>
+                        </div>
+                        <div class="bg-gradient-to-br from-rose-400 to-pink-500 rounded-2xl p-8 text-center card-hover min-h-64 flex flex-col items-center justify-center photo-hover cursor-pointer" onclick="openModal('2021-creative-hats.jpg')">
+                            <i data-lucide="sparkles" class="w-16 h-16 text-white mb-4"></i>
+                            <h4 class="text-white font-bold cinzel text-lg">Creative Innovations</h4>
+                            <p class="text-sm text-pink-100 mt-2 cinzel">Unique pandemic-inspired designs</p>
+                        </div>
+                        <div class="bg-gradient-to-br from-amber-400 to-orange-500 rounded-2xl p-8 text-center card-hover min-h-64 flex flex-col items-center justify-center photo-hover cursor-pointer" onclick="openModal('2021-community-spirit.jpg')">
+                            <i data-lucide="users" class="w-16 h-16 text-white mb-4"></i>
+                            <h4 class="text-white font-bold cinzel text-lg">Community Spirit</h4>
+                            <p class="text-sm text-yellow-100 mt-2 cinzel">Together despite the distance</p>
+                        </div>
+                    </div>
+                    
+                    <div class="text-center">
+                        <button class="bg-gradient-to-r from-emerald-500 to-cyan-600 text-white px-8 py-3 rounded-full font-bold shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300 cinzel">
+                            View Complete 2021 Gallery (31 photos)
+                        </button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 2019 Gallery -->
+            <section class="mb-16">
+                <div class="bg-white bg-opacity-95 rounded-3xl p-8 shadow-xl">
+                    <div class="text-center mb-8">
+                        <h3 class="text-4xl font-bold text-purple-900 mb-4 cinzel">
+                            🎭 2019 Inaugural Parade
+                        </h3>
+                        <p class="text-purple-700 cinzel text-lg">
+                            Where it all began! Our very first Easter Parade Matzo Ball celebration.
+                        </p>
+                    </div>
+                    
+                    <div class="grid md:grid-cols-3 gap-6 mb-8">
+                        <div class="bg-gradient-to-br from-violet-400 to-purple-500 rounded-2xl p-8 text-center card-hover min-h-64 flex flex-col items-center justify-center photo-hover cursor-pointer" onclick="openModal('2019-first-steps.jpg')">
+                            <i data-lucide="flag" class="w-16 h-16 text-white mb-4"></i>
+                            <h4 class="text-white font-bold cinzel text-lg">Historic First Steps</h4>
+                            <p class="text-sm text-purple-100 mt-2 cinzel">The moment our tradition was born</p>
+                        </div>
+                        <div class="bg-gradient-to-br from-teal-400 to-blue-500 rounded-2xl p-8 text-center card-hover min-h-64 flex flex-col items-center justify-center photo-hover cursor-pointer" onclick="openModal('2019-pioneers.jpg')">
+                            <i data-lucide="star" class="w-16 h-16 text-white mb-4"></i>
+                            <h4 class="text-white font-bold cinzel text-lg">The Pioneers</h4>
+                            <p class="text-sm text-blue-100 mt-2 cinzel">Our founding parade participants</p>
+                        </div>
+                        <div class="bg-gradient-to-br from-lime-400 to-green-500 rounded-2xl p-8 text-center card-hover min-h-64 flex flex-col items-center justify-center photo-hover cursor-pointer" onclick="openModal('2019-simple-joy.jpg')">
+                            <i data-lucide="smile" class="w-16 h-16 text-white mb-4"></i>
+                            <h4 class="text-white font-bold cinzel text-lg">Simple Joys</h4>
+                            <p class="text-sm text-green-100 mt-2 cinzel">Pure happiness and community</p>
+                        </div>
+                    </div>
+                    
+                    <div class="text-center">
+                        <button class="bg-gradient-to-r from-violet-500 to-purple-600 text-white px-8 py-3 rounded-full font-bold shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300 cinzel">
+                            View Complete 2019 Gallery (23 photos)
+                        </button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Photo Contest Section -->
+            <section class="bg-gradient-to-br from-indigo-400 to-purple-500 rounded-3xl p-8 text-center shadow-xl">
+                <h2 class="text-4xl font-bold text-white mb-6 cinzel">
+                    🏆 Annual Photo Contest
+                </h2>
+                <p class="text-indigo-100 mb-8 cinzel text-xl max-w-3xl mx-auto">
+                    Each year we celebrate our community photographers! Submit your best parade photos for a chance to win prizes and have your work featured in our permanent collection.
+                </p>
+                <div class="grid md:grid-cols-3 gap-6 mb-8">
+                    <div class="bg-white bg-opacity-20 rounded-2xl p-6">
+                        <div class="text-4xl mb-4">🥇</div>
+                        <h3 class="text-white font-bold cinzel text-xl mb-2">Best Hat Photo</h3>
+                        <p class="text-indigo-100 cinzel">Showcasing the artistry and creativity of our hat makers</p>
+                    </div>
+                    <div class="bg-white bg-opacity-20 rounded-2xl p-6">
+                        <div class="text-4xl mb-4">🥈</div>
+                        <h3 class="text-white font-bold cinzel text-xl mb-2">Community Spirit</h3>
+                        <p class="text-indigo-100 cinzel">Capturing the joy and togetherness of our celebration</p>
+                    </div>
+                    <div class="bg-white bg-opacity-20 rounded-2xl p-6">
+                        <div class="text-4xl mb-4">🥉</div>
+                        <h3 class="text-white font-bold cinzel text-xl mb-2">Most Creative</h3>
+                        <p class="text-indigo-100 cinzel">Unique angles, artistic vision, and creative composition</p>
+                    </div>
+                </div>
+                <button class="bg-white text-indigo-600 px-8 py-4 rounded-full font-bold text-xl shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300 cinzel">
+                    Enter 2024 Photo Contest
+                </button>
+            </section>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="relative z-30 bg-purple-900 text-white py-8 mt-16">
+        <div class="max-w-6xl mx-auto px-6 text-center">
+            <div class="flex justify-center items-center space-x-4 mb-4">
+                <div class="text-3xl">🥯</div>
+                <h3 class="text-2xl font-bold cinzel">
+                    Easter Parade Matzo Ball
+                </h3>
+                <div class="text-3xl">🌸</div>
+            </div>
+            <p class="cinzel">
+                Capturing memories and preserving joy • One photo at a time 📸
+            </p>
+            <div class="mt-4 space-x-4">
+                <span class="text-yellow-300">📧 info@easterparadematzoball.com</span>
+                <span class="text-pink-300">📱 Follow us on social media!</span>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Initialize Lucide icons
+        lucide.createIcons();
+        
+        // Modal functionality
+        function openModal(imageSrc) {
+            const modal = document.getElementById('photoModal');
+            const modalImage = document.getElementById('modalImage');
+            modalImage.src = imageSrc;
+            modal.classList.add('show');
+        }
+        
+        function closeModal() {
+            const modal = document.getElementById('photoModal');
+            modal.classList.remove('show');
+        }
+        
+        // Close modal when clicking outside the image
+        document.getElementById('photoModal').addEventListener('click', function(e) {
+            if (e.target === this) {
+                closeModal();
+            }
+        });
+        
+        // Close modal with Escape key
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                closeModal();
+            }
+        });
+    </script>
+</body>
+</html>

@@ -180,33 +180,49 @@
                             Our most spectacular parade yet! Over 200 participants with incredible hat creations.
                         </p>
                     </div>
-                    
+
+                    <!-- Photo Grid -->
                     <div class="grid md:grid-cols-4 gap-6 mb-8">
-                        <div class="bg-gradient-to-br from-pink-500 to-purple-600 rounded-2xl p-8 text-center card-hover min-h-64 flex flex-col items-center justify-center photo-hover cursor-pointer" onclick="openModal('2023-grand-parade.jpg')">
-                            <i data-lucide="camera" class="w-16 h-16 text-yellow-300 mb-4"></i>
-                            <h4 class="text-white font-bold cinzel text-lg">Grand Parade</h4>
-                            <p class="text-sm text-yellow-200 mt-2 cinzel">The full procession in all its glory</p>
+                        <!-- Photo 1 -->
+                        <div class="rounded-2xl overflow-hidden shadow-lg card-hover photo-hover cursor-pointer" onclick="openModal('photos/2023/2023-01.jpg', 'Grand Parade')">
+                            <img src="photos/2023/2023-01.jpg" alt="2023 Grand Parade" class="w-full h-64 object-cover" onerror="this.parentElement.innerHTML='<div class=\'bg-gradient-to-br from-pink-500 to-purple-600 rounded-2xl p-8 text-center min-h-64 flex flex-col items-center justify-center\'><i data-lucide=\'camera\' class=\'w-16 h-16 text-yellow-300 mb-4\'></i><h4 class=\'text-white font-bold cinzel text-lg\'>Grand Parade</h4><p class=\'text-sm text-yellow-200 mt-2 cinzel\'>Photo coming soon</p></div>'; lucide.createIcons();">
+                            <div class="bg-purple-900 text-white p-3 text-center">
+                                <p class="font-bold cinzel">Grand Parade</p>
+                            </div>
                         </div>
-                        <div class="bg-gradient-to-br from-green-500 to-teal-600 rounded-2xl p-8 text-center card-hover min-h-64 flex flex-col items-center justify-center photo-hover cursor-pointer" onclick="openModal('2023-hat-contest.jpg')">
-                            <i data-lucide="award" class="w-16 h-16 text-yellow-300 mb-4"></i>
-                            <h4 class="text-white font-bold cinzel text-lg">Hat Contest Winners</h4>
-                            <p class="text-sm text-yellow-200 mt-2 cinzel">Our most creative hat creators</p>
+
+                        <!-- Photo 2 -->
+                        <div class="rounded-2xl overflow-hidden shadow-lg card-hover photo-hover cursor-pointer" onclick="openModal('photos/2023/2023-02.jpg', 'Hat Contest Winners')">
+                            <img src="photos/2023/2023-02.jpg" alt="2023 Hat Contest Winners" class="w-full h-64 object-cover" onerror="this.parentElement.innerHTML='<div class=\'bg-gradient-to-br from-green-500 to-teal-600 rounded-2xl p-8 text-center min-h-64 flex flex-col items-center justify-center\'><i data-lucide=\'award\' class=\'w-16 h-16 text-yellow-300 mb-4\'></i><h4 class=\'text-white font-bold cinzel text-lg\'>Hat Contest Winners</h4><p class=\'text-sm text-yellow-200 mt-2 cinzel\'>Photo coming soon</p></div>'; lucide.createIcons();">
+                            <div class="bg-purple-900 text-white p-3 text-center">
+                                <p class="font-bold cinzel">Hat Contest Winners</p>
+                            </div>
                         </div>
-                        <div class="bg-gradient-to-br from-blue-500 to-indigo-600 rounded-2xl p-8 text-center card-hover min-h-64 flex flex-col items-center justify-center photo-hover cursor-pointer" onclick="openModal('2023-kids-parade.jpg')">
-                            <i data-lucide="heart" class="w-16 h-16 text-yellow-300 mb-4"></i>
-                            <h4 class="text-white font-bold cinzel text-lg">Kids' Corner</h4>
-                            <p class="text-sm text-yellow-200 mt-2 cinzel">Young hat makers stealing the show</p>
+
+                        <!-- Photo 3 -->
+                        <div class="rounded-2xl overflow-hidden shadow-lg card-hover photo-hover cursor-pointer" onclick="openModal('photos/2023/2023-03.jpg', 'Kids Corner')">
+                            <img src="photos/2023/2023-03.jpg" alt="2023 Kids Corner" class="w-full h-64 object-cover" onerror="this.parentElement.innerHTML='<div class=\'bg-gradient-to-br from-blue-500 to-indigo-600 rounded-2xl p-8 text-center min-h-64 flex flex-col items-center justify-center\'><i data-lucide=\'heart\' class=\'w-16 h-16 text-yellow-300 mb-4\'></i><h4 class=\'text-white font-bold cinzel text-lg\'>Kids\' Corner</h4><p class=\'text-sm text-yellow-200 mt-2 cinzel\'>Photo coming soon</p></div>'; lucide.createIcons();">
+                            <div class="bg-purple-900 text-white p-3 text-center">
+                                <p class="font-bold cinzel">Kids' Corner</p>
+                            </div>
                         </div>
-                        <div class="bg-gradient-to-br from-orange-500 to-red-600 rounded-2xl p-8 text-center card-hover min-h-64 flex flex-col items-center justify-center photo-hover cursor-pointer" onclick="openModal('2023-behind-scenes.jpg')">
-                            <i data-lucide="settings" class="w-16 h-16 text-yellow-300 mb-4"></i>
-                            <h4 class="text-white font-bold cinzel text-lg">Behind the Scenes</h4>
-                            <p class="text-sm text-yellow-200 mt-2 cinzel">Workshop moments and preparation</p>
+
+                        <!-- Photo 4 -->
+                        <div class="rounded-2xl overflow-hidden shadow-lg card-hover photo-hover cursor-pointer" onclick="openModal('photos/2023/2023-04.jpg', 'Behind the Scenes')">
+                            <img src="photos/2023/2023-04.jpg" alt="2023 Behind the Scenes" class="w-full h-64 object-cover" onerror="this.parentElement.innerHTML='<div class=\'bg-gradient-to-br from-orange-500 to-red-600 rounded-2xl p-8 text-center min-h-64 flex flex-col items-center justify-center\'><i data-lucide=\'settings\' class=\'w-16 h-16 text-yellow-300 mb-4\'></i><h4 class=\'text-white font-bold cinzel text-lg\'>Behind the Scenes</h4><p class=\'text-sm text-yellow-200 mt-2 cinzel\'>Photo coming soon</p></div>'; lucide.createIcons();">
+                            <div class="bg-purple-900 text-white p-3 text-center">
+                                <p class="font-bold cinzel">Behind the Scenes</p>
+                            </div>
                         </div>
+
+                        <!-- Add more photos here following the same pattern -->
+                        <!-- Copy and paste the above photo div, update the numbers and descriptions -->
                     </div>
-                    
+
                     <div class="text-center">
+                        <p class="text-purple-700 cinzel text-sm mb-4">More photos available in our complete gallery</p>
                         <button class="bg-gradient-to-r from-purple-500 to-pink-600 text-white px-8 py-3 rounded-full font-bold shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300 cinzel">
-                            View Complete 2023 Gallery (47 photos)
+                            View Complete 2023 Gallery
                         </button>
                     </div>
                 </div>
@@ -223,28 +239,38 @@
                             A year of resilience and creativity! Socially distanced but spiritually connected.
                         </p>
                     </div>
-                    
+
+                    <!-- Photo Grid -->
                     <div class="grid md:grid-cols-3 gap-6 mb-8">
-                        <div class="bg-gradient-to-br from-emerald-400 to-cyan-500 rounded-2xl p-8 text-center card-hover min-h-64 flex flex-col items-center justify-center photo-hover cursor-pointer" onclick="openModal('2021-outdoor-celebration.jpg')">
-                            <i data-lucide="sun" class="w-16 h-16 text-white mb-4"></i>
-                            <h4 class="text-white font-bold cinzel text-lg">Outdoor Celebration</h4>
-                            <p class="text-sm text-blue-100 mt-2 cinzel">Beautiful day in the park</p>
+                        <!-- Photo 1 -->
+                        <div class="rounded-2xl overflow-hidden shadow-lg card-hover photo-hover cursor-pointer" onclick="openModal('photos/2021/2021-01.jpg', 'Outdoor Celebration')">
+                            <img src="photos/2021/2021-01.jpg" alt="2021 Outdoor Celebration" class="w-full h-64 object-cover" onerror="this.parentElement.innerHTML='<div class=\'bg-gradient-to-br from-emerald-400 to-cyan-500 rounded-2xl p-8 text-center min-h-64 flex flex-col items-center justify-center\'><i data-lucide=\'sun\' class=\'w-16 h-16 text-white mb-4\'></i><h4 class=\'text-white font-bold cinzel text-lg\'>Outdoor Celebration</h4><p class=\'text-sm text-blue-100 mt-2 cinzel\'>Photo coming soon</p></div>'; lucide.createIcons();">
+                            <div class="bg-teal-700 text-white p-3 text-center">
+                                <p class="font-bold cinzel">Outdoor Celebration</p>
+                            </div>
                         </div>
-                        <div class="bg-gradient-to-br from-rose-400 to-pink-500 rounded-2xl p-8 text-center card-hover min-h-64 flex flex-col items-center justify-center photo-hover cursor-pointer" onclick="openModal('2021-creative-hats.jpg')">
-                            <i data-lucide="sparkles" class="w-16 h-16 text-white mb-4"></i>
-                            <h4 class="text-white font-bold cinzel text-lg">Creative Innovations</h4>
-                            <p class="text-sm text-pink-100 mt-2 cinzel">Unique pandemic-inspired designs</p>
+
+                        <!-- Photo 2 -->
+                        <div class="rounded-2xl overflow-hidden shadow-lg card-hover photo-hover cursor-pointer" onclick="openModal('photos/2021/2021-02.jpg', 'Creative Innovations')">
+                            <img src="photos/2021/2021-02.jpg" alt="2021 Creative Innovations" class="w-full h-64 object-cover" onerror="this.parentElement.innerHTML='<div class=\'bg-gradient-to-br from-rose-400 to-pink-500 rounded-2xl p-8 text-center min-h-64 flex flex-col items-center justify-center\'><i data-lucide=\'sparkles\' class=\'w-16 h-16 text-white mb-4\'></i><h4 class=\'text-white font-bold cinzel text-lg\'>Creative Innovations</h4><p class=\'text-sm text-pink-100 mt-2 cinzel\'>Photo coming soon</p></div>'; lucide.createIcons();">
+                            <div class="bg-teal-700 text-white p-3 text-center">
+                                <p class="font-bold cinzel">Creative Innovations</p>
+                            </div>
                         </div>
-                        <div class="bg-gradient-to-br from-amber-400 to-orange-500 rounded-2xl p-8 text-center card-hover min-h-64 flex flex-col items-center justify-center photo-hover cursor-pointer" onclick="openModal('2021-community-spirit.jpg')">
-                            <i data-lucide="users" class="w-16 h-16 text-white mb-4"></i>
-                            <h4 class="text-white font-bold cinzel text-lg">Community Spirit</h4>
-                            <p class="text-sm text-yellow-100 mt-2 cinzel">Together despite the distance</p>
+
+                        <!-- Photo 3 -->
+                        <div class="rounded-2xl overflow-hidden shadow-lg card-hover photo-hover cursor-pointer" onclick="openModal('photos/2021/2021-03.jpg', 'Community Spirit')">
+                            <img src="photos/2021/2021-03.jpg" alt="2021 Community Spirit" class="w-full h-64 object-cover" onerror="this.parentElement.innerHTML='<div class=\'bg-gradient-to-br from-amber-400 to-orange-500 rounded-2xl p-8 text-center min-h-64 flex flex-col items-center justify-center\'><i data-lucide=\'users\' class=\'w-16 h-16 text-white mb-4\'></i><h4 class=\'text-white font-bold cinzel text-lg\'>Community Spirit</h4><p class=\'text-sm text-yellow-100 mt-2 cinzel\'>Photo coming soon</p></div>'; lucide.createIcons();">
+                            <div class="bg-teal-700 text-white p-3 text-center">
+                                <p class="font-bold cinzel">Community Spirit</p>
+                            </div>
                         </div>
                     </div>
-                    
+
                     <div class="text-center">
+                        <p class="text-purple-700 cinzel text-sm mb-4">More photos available in our complete gallery</p>
                         <button class="bg-gradient-to-r from-emerald-500 to-cyan-600 text-white px-8 py-3 rounded-full font-bold shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300 cinzel">
-                            View Complete 2021 Gallery (31 photos)
+                            View Complete 2021 Gallery
                         </button>
                     </div>
                 </div>
@@ -261,28 +287,38 @@
                             Where it all began! Our very first Easter Parade Matzo Ball celebration.
                         </p>
                     </div>
-                    
+
+                    <!-- Photo Grid -->
                     <div class="grid md:grid-cols-3 gap-6 mb-8">
-                        <div class="bg-gradient-to-br from-violet-400 to-purple-500 rounded-2xl p-8 text-center card-hover min-h-64 flex flex-col items-center justify-center photo-hover cursor-pointer" onclick="openModal('2019-first-steps.jpg')">
-                            <i data-lucide="flag" class="w-16 h-16 text-white mb-4"></i>
-                            <h4 class="text-white font-bold cinzel text-lg">Historic First Steps</h4>
-                            <p class="text-sm text-purple-100 mt-2 cinzel">The moment our tradition was born</p>
+                        <!-- Photo 1 -->
+                        <div class="rounded-2xl overflow-hidden shadow-lg card-hover photo-hover cursor-pointer" onclick="openModal('photos/2019/2019-01.jpg', 'Historic First Steps')">
+                            <img src="photos/2019/2019-01.jpg" alt="2019 Historic First Steps" class="w-full h-64 object-cover" onerror="this.parentElement.innerHTML='<div class=\'bg-gradient-to-br from-violet-400 to-purple-500 rounded-2xl p-8 text-center min-h-64 flex flex-col items-center justify-center\'><i data-lucide=\'flag\' class=\'w-16 h-16 text-white mb-4\'></i><h4 class=\'text-white font-bold cinzel text-lg\'>Historic First Steps</h4><p class=\'text-sm text-purple-100 mt-2 cinzel\'>Photo coming soon</p></div>'; lucide.createIcons();">
+                            <div class="bg-violet-700 text-white p-3 text-center">
+                                <p class="font-bold cinzel">Historic First Steps</p>
+                            </div>
                         </div>
-                        <div class="bg-gradient-to-br from-teal-400 to-blue-500 rounded-2xl p-8 text-center card-hover min-h-64 flex flex-col items-center justify-center photo-hover cursor-pointer" onclick="openModal('2019-pioneers.jpg')">
-                            <i data-lucide="star" class="w-16 h-16 text-white mb-4"></i>
-                            <h4 class="text-white font-bold cinzel text-lg">The Pioneers</h4>
-                            <p class="text-sm text-blue-100 mt-2 cinzel">Our founding parade participants</p>
+
+                        <!-- Photo 2 -->
+                        <div class="rounded-2xl overflow-hidden shadow-lg card-hover photo-hover cursor-pointer" onclick="openModal('photos/2019/2019-02.jpg', 'The Pioneers')">
+                            <img src="photos/2019/2019-02.jpg" alt="2019 The Pioneers" class="w-full h-64 object-cover" onerror="this.parentElement.innerHTML='<div class=\'bg-gradient-to-br from-teal-400 to-blue-500 rounded-2xl p-8 text-center min-h-64 flex flex-col items-center justify-center\'><i data-lucide=\'star\' class=\'w-16 h-16 text-white mb-4\'></i><h4 class=\'text-white font-bold cinzel text-lg\'>The Pioneers</h4><p class=\'text-sm text-blue-100 mt-2 cinzel\'>Photo coming soon</p></div>'; lucide.createIcons();">
+                            <div class="bg-violet-700 text-white p-3 text-center">
+                                <p class="font-bold cinzel">The Pioneers</p>
+                            </div>
                         </div>
-                        <div class="bg-gradient-to-br from-lime-400 to-green-500 rounded-2xl p-8 text-center card-hover min-h-64 flex flex-col items-center justify-center photo-hover cursor-pointer" onclick="openModal('2019-simple-joy.jpg')">
-                            <i data-lucide="smile" class="w-16 h-16 text-white mb-4"></i>
-                            <h4 class="text-white font-bold cinzel text-lg">Simple Joys</h4>
-                            <p class="text-sm text-green-100 mt-2 cinzel">Pure happiness and community</p>
+
+                        <!-- Photo 3 -->
+                        <div class="rounded-2xl overflow-hidden shadow-lg card-hover photo-hover cursor-pointer" onclick="openModal('photos/2019/2019-03.jpg', 'Simple Joys')">
+                            <img src="photos/2019/2019-03.jpg" alt="2019 Simple Joys" class="w-full h-64 object-cover" onerror="this.parentElement.innerHTML='<div class=\'bg-gradient-to-br from-lime-400 to-green-500 rounded-2xl p-8 text-center min-h-64 flex flex-col items-center justify-center\'><i data-lucide=\'smile\' class=\'w-16 h-16 text-white mb-4\'></i><h4 class=\'text-white font-bold cinzel text-lg\'>Simple Joys</h4><p class=\'text-sm text-green-100 mt-2 cinzel\'>Photo coming soon</p></div>'; lucide.createIcons();">
+                            <div class="bg-violet-700 text-white p-3 text-center">
+                                <p class="font-bold cinzel">Simple Joys</p>
+                            </div>
                         </div>
                     </div>
-                    
+
                     <div class="text-center">
+                        <p class="text-purple-700 cinzel text-sm mb-4">More photos available in our complete gallery</p>
                         <button class="bg-gradient-to-r from-violet-500 to-purple-600 text-white px-8 py-3 rounded-full font-bold shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300 cinzel">
-                            View Complete 2019 Gallery (23 photos)
+                            View Complete 2019 Gallery
                         </button>
                     </div>
                 </div>
@@ -345,10 +381,11 @@
         lucide.createIcons();
         
         // Modal functionality
-        function openModal(imageSrc) {
+        function openModal(imageSrc, caption) {
             const modal = document.getElementById('photoModal');
             const modalImage = document.getElementById('modalImage');
             modalImage.src = imageSrc;
+            modalImage.alt = caption || 'Parade Photo';
             modal.classList.add('show');
         }
         

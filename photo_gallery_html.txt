@@ -1,0 +1,154 @@
+    <div class="grid md:grid-cols-4 gap-6">
+
+        <!-- Photo 1 -->
+        <div class="rounded-2xl overflow-hidden shadow-lg card-hover photo-hover cursor-pointer" onclick="openModal('photos/IMG_2435.JPG', 'Parade Photo 1')">
+            <img src="photos/IMG_2435.JPG" alt="Easter Parade Matzo Ball Photo 1" class="w-full h-64 object-cover">
+            <div class="bg-purple-900 text-white p-3 text-center">
+                <p class="font-bold cinzel">Photo 1</p>
+            </div>
+        </div>
+
+        <!-- Photo 2 -->
+        <div class="rounded-2xl overflow-hidden shadow-lg card-hover photo-hover cursor-pointer" onclick="openModal('photos/IMG_2437.JPG', 'Parade Photo 2')">
+            <img src="photos/IMG_2437.JPG" alt="Easter Parade Matzo Ball Photo 2" class="w-full h-64 object-cover">
+            <div class="bg-purple-900 text-white p-3 text-center">
+                <p class="font-bold cinzel">Photo 2</p>
+            </div>
+        </div>
+
+        <!-- Photo 3 -->
+        <div class="rounded-2xl overflow-hidden shadow-lg card-hover photo-hover cursor-pointer" onclick="openModal('photos/IMG_2439.JPG', 'Parade Photo 3')">
+            <img src="photos/IMG_2439.JPG" alt="Easter Parade Matzo Ball Photo 3" class="w-full h-64 object-cover">
+            <div class="bg-purple-900 text-white p-3 text-center">
+                <p class="font-bold cinzel">Photo 3</p>
+            </div>
+        </div>
+
+        <!-- Photo 4 -->
+        <div class="rounded-2xl overflow-hidden shadow-lg card-hover photo-hover cursor-pointer" onclick="openModal('photos/IMG_2440.JPG', 'Parade Photo 4')">
+            <img src="photos/IMG_2440.JPG" alt="Easter Parade Matzo Ball Photo 4" class="w-full h-64 object-cover">
+            <div class="bg-purple-900 text-white p-3 text-center">
+                <p class="font-bold cinzel">Photo 4</p>
+            </div>
+        </div>
+
+        <!-- Photo 5 -->
+        <div class="rounded-2xl overflow-hidden shadow-lg card-hover photo-hover cursor-pointer" onclick="openModal('photos/IMG_2445.JPG', 'Parade Photo 5')">
+            <img src="photos/IMG_2445.JPG" alt="Easter Parade Matzo Ball Photo 5" class="w-full h-64 object-cover">
+            <div class="bg-purple-900 text-white p-3 text-center">
+                <p class="font-bold cinzel">Photo 5</p>
+            </div>
+        </div>
+
+        <!-- Photo 6 -->
+        <div class="rounded-2xl overflow-hidden shadow-lg card-hover photo-hover cursor-pointer" onclick="openModal('photos/IMG_2448.JPG', 'Parade Photo 6')">
+            <img src="photos/IMG_2448.JPG" alt="Easter Parade Matzo Ball Photo 6" class="w-full h-64 object-cover">
+            <div class="bg-purple-900 text-white p-3 text-center">
+                <p class="font-bold cinzel">Photo 6</p>
+            </div>
+        </div>
+
+        <!-- Photo 7 -->
+        <div class="rounded-2xl overflow-hidden shadow-lg card-hover photo-hover cursor-pointer" onclick="openModal('photos/IMG_2450.JPG', 'Parade Photo 7')">
+            <img src="photos/IMG_2450.JPG" alt="Easter Parade Matzo Ball Photo 7" class="w-full h-64 object-cover">
+            <div class="bg-purple-900 text-white p-3 text-center">
+                <p class="font-bold cinzel">Photo 7</p>
+            </div>
+        </div>
+
+        <!-- Photo 8 -->
+        <div class="rounded-2xl overflow-hidden shadow-lg card-hover photo-hover cursor-pointer" onclick="openModal('photos/IMG_2457.JPG', 'Parade Photo 8')">
+            <img src="photos/IMG_2457.JPG" alt="Easter Parade Matzo Ball Photo 8" class="w-full h-64 object-cover">
+            <div class="bg-purple-900 text-white p-3 text-center">
+                <p class="font-bold cinzel">Photo 8</p>
+            </div>
+        </div>
+
+        <!-- Photo 9 -->
+        <div class="rounded-2xl overflow-hidden shadow-lg card-hover photo-hover cursor-pointer" onclick="openModal('photos/IMG_2458.JPG', 'Parade Photo 9')">
+            <img src="photos/IMG_2458.JPG" alt="Easter Parade Matzo Ball Photo 9" class="w-full h-64 object-cover">
+            <div class="bg-purple-900 text-white p-3 text-center">
+                <p class="font-bold cinzel">Photo 9</p>
+            </div>
+        </div>
+
+        <!-- Photo 10 -->
+        <div class="rounded-2xl overflow-hidden shadow-lg card-hover photo-hover cursor-pointer" onclick="openModal('photos/IMG_2459.JPG', 'Parade Photo 10')">
+            <img src="photos/IMG_2459.JPG" alt="Easter Parade Matzo Ball Photo 10" class="w-full h-64 object-cover">
+            <div class="bg-purple-900 text-white p-3 text-center">
+                <p class="font-bold cinzel">Photo 10</p>
+            </div>
+        </div>
+
+        <!-- Photo 11 -->
+        <div class="rounded-2xl overflow-hidden shadow-lg card-hover photo-hover cursor-pointer" onclick="openModal('photos/IMG_2461.JPG', 'Parade Photo 11')">
+            <img src="photos/IMG_2461.JPG" alt="Easter Parade Matzo Ball Photo 11" class="w-full h-64 object-cover">
+            <div class="bg-purple-900 text-white p-3 text-center">
+                <p class="font-bold cinzel">Photo 11</p>
+            </div>
+        </div>
+
+        <!-- Photo 12 -->
+        <div class="rounded-2xl overflow-hidden shadow-lg card-hover photo-hover cursor-pointer" onclick="openModal('photos/IMG_2462.JPG', 'Parade Photo 12')">
+            <img src="photos/IMG_2462.JPG" alt="Easter Parade Matzo Ball Photo 12" class="w-full h-64 object-cover">
+            <div class="bg-purple-900 text-white p-3 text-center">
+                <p class="font-bold cinzel">Photo 12</p>
+            </div>
+        </div>
+
+        <!-- Photo 13 -->
+        <div class="rounded-2xl overflow-hidden shadow-lg card-hover photo-hover cursor-pointer" onclick="openModal('photos/IMG_2464.JPG', 'Parade Photo 13')">
+            <img src="photos/IMG_2464.JPG" alt="Easter Parade Matzo Ball Photo 13" class="w-full h-64 object-cover">
+            <div class="bg-purple-900 text-white p-3 text-center">
+                <p class="font-bold cinzel">Photo 13</p>
+            </div>
+        </div>
+
+        <!-- Photo 14 -->
+        <div class="rounded-2xl overflow-hidden shadow-lg card-hover photo-hover cursor-pointer" onclick="openModal('photos/IMG_2466.JPG', 'Parade Photo 14')">
+            <img src="photos/IMG_2466.JPG" alt="Easter Parade Matzo Ball Photo 14" class="w-full h-64 object-cover">
+            <div class="bg-purple-900 text-white p-3 text-center">
+                <p class="font-bold cinzel">Photo 14</p>
+            </div>
+        </div>
+
+        <!-- Photo 15 -->
+        <div class="rounded-2xl overflow-hidden shadow-lg card-hover photo-hover cursor-pointer" onclick="openModal('photos/IMG_2469.JPG', 'Parade Photo 15')">
+            <img src="photos/IMG_2469.JPG" alt="Easter Parade Matzo Ball Photo 15" class="w-full h-64 object-cover">
+            <div class="bg-purple-900 text-white p-3 text-center">
+                <p class="font-bold cinzel">Photo 15</p>
+            </div>
+        </div>
+
+        <!-- Photo 16 -->
+        <div class="rounded-2xl overflow-hidden shadow-lg card-hover photo-hover cursor-pointer" onclick="openModal('photos/IMG_2470.JPG', 'Parade Photo 16')">
+            <img src="photos/IMG_2470.JPG" alt="Easter Parade Matzo Ball Photo 16" class="w-full h-64 object-cover">
+            <div class="bg-purple-900 text-white p-3 text-center">
+                <p class="font-bold cinzel">Photo 16</p>
+            </div>
+        </div>
+
+        <!-- Photo 17 -->
+        <div class="rounded-2xl overflow-hidden shadow-lg card-hover photo-hover cursor-pointer" onclick="openModal('photos/IMG_2484.JPG', 'Parade Photo 17')">
+            <img src="photos/IMG_2484.JPG" alt="Easter Parade Matzo Ball Photo 17" class="w-full h-64 object-cover">
+            <div class="bg-purple-900 text-white p-3 text-center">
+                <p class="font-bold cinzel">Photo 17</p>
+            </div>
+        </div>
+
+        <!-- Photo 18 -->
+        <div class="rounded-2xl overflow-hidden shadow-lg card-hover photo-hover cursor-pointer" onclick="openModal('photos/IMG_2486.JPG', 'Parade Photo 18')">
+            <img src="photos/IMG_2486.JPG" alt="Easter Parade Matzo Ball Photo 18" class="w-full h-64 object-cover">
+            <div class="bg-purple-900 text-white p-3 text-center">
+                <p class="font-bold cinzel">Photo 18</p>
+            </div>
+        </div>
+
+        <!-- Photo 19 -->
+        <div class="rounded-2xl overflow-hidden shadow-lg card-hover photo-hover cursor-pointer" onclick="openModal('photos/IMG_4483.JPG', 'Parade Photo 19')">
+            <img src="photos/IMG_4483.JPG" alt="Easter Parade Matzo Ball Photo 19" class="w-full h-64 object-cover">
+            <div class="bg-purple-900 text-white p-3 text-center">
+                <p class="font-bold cinzel">Photo 19</p>
+            </div>
+        </div>
+    </div>

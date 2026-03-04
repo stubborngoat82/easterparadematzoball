@@ -50,7 +50,7 @@
         .slide-in {
             animation: slideIn 1s ease-out;
         }
-        
+
         @keyframes slideIn {
             from {
                 opacity: 0;
@@ -61,10 +61,45 @@
                 transform: translateY(0);
             }
         }
+
+        .photo-hover {
+            transition: all 0.3s ease;
+        }
+        .photo-hover:hover {
+            transform: scale(1.05);
+            z-index: 10;
+        }
+
+        /* Modal styles */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.9);
+        }
+        .modal.show {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .modal-content {
+            max-width: 90%;
+            max-height: 90%;
+        }
     </style>
 </head>
 <body class="min-h-screen bg-with-overlay relative overflow-x-hidden">
-    
+
+    <!-- Photo Modal -->
+    <div id="photoModal" class="modal">
+        <span class="absolute top-4 right-8 text-white text-4xl cursor-pointer hover:text-gray-300" onclick="closeModal()">&times;</span>
+        <img id="modalImage" class="modal-content">
+    </div>
+
     <!-- Header with Logo and Navigation -->
     <header class="relative z-40 pt-6 pb-2">
         <div class="text-center mb-6">
@@ -117,131 +152,123 @@
                 <div class="absolute right-10 text-4xl float" style="animation-delay: 1s;">✂️</div>
             </section>
 
-            <!-- SPECIAL WORKSHOP ANNOUNCEMENT -->
+            <!-- FIRST WORKSHOP RECAP -->
             <section class="mb-16">
-                <div class="bg-gradient-to-br from-yellow-400 to-orange-500 rounded-3xl p-8 shadow-2xl border-4 border-white relative overflow-hidden">
-                    <!-- Sparkle decorations -->
-                    <div class="absolute top-4 right-4 text-4xl animate-pulse">✨</div>
-                    <div class="absolute bottom-4 left-4 text-3xl animate-bounce">🎩</div>
-                    
+                <div class="bg-gradient-to-br from-green-500 to-teal-600 rounded-3xl p-8 shadow-2xl border-4 border-white relative overflow-hidden">
+                    <div class="absolute top-4 right-4 text-4xl animate-bounce">🎉</div>
+                    <div class="absolute bottom-4 left-4 text-3xl animate-pulse">🎩</div>
+
                     <div class="text-center mb-8">
-                        <h2 class="text-5xl font-bold text-white mb-4 cinzel drop-shadow-lg">
-                            🌟 SPECIAL ANNOUNCEMENT! 🌟
+                        <h2 class="text-4xl font-bold text-white mb-4 cinzel drop-shadow-lg">
+                            ✅ First Workshop: A Great Success!
                         </h2>
-                        <h3 class="text-3xl font-bold text-white mb-6 cinzel">
-                            Exclusive Workshop with Master Milliner Amina Hood
+                        <h3 class="text-2xl font-bold text-green-100 mb-4 cinzel">
+                            February 23rd · ASU FIDM · Fusion on First
                         </h3>
-                    </div>
-
-                    <div class="grid md:grid-cols-2 gap-8 mb-8">
-                        <!-- Workshop Details -->
-                        <div class="bg-white bg-opacity-90 rounded-2xl p-6">
-                            <h4 class="text-2xl font-bold text-purple-900 mb-4 cinzel">Workshop Details</h4>
-                            <div class="space-y-3">
-                                <div class="flex items-center">
-                                    <i data-lucide="calendar" class="w-6 h-6 text-orange-600 mr-3"></i>
-                                    <span class="cinzel text-lg"><strong>February 23rd</strong></span>
-                                </div>
-                                <div class="flex items-center">
-                                    <i data-lucide="clock" class="w-6 h-6 text-orange-600 mr-3"></i>
-                                    <span class="cinzel text-lg"><strong>11:00 AM - 2:00 PM Workshop</strong></span>
-                                </div>
-                                <div class="flex items-center">
-                                    <i data-lucide="clock" class="w-6 h-6 text-orange-600 mr-3"></i>
-                                    <span class="cinzel text-lg"><strong>2:00 PM - 4:00 PM Lecture</strong></span>
-                                </div>
-                                <div class="flex items-center">
-                                    <i data-lucide="map-pin" class="w-6 h-6 text-orange-600 mr-3"></i>
-                                    <span class="cinzel text-lg"><strong>ASU Downtown Phoenix</strong></span>
-                                </div>
-                                <div class="flex items-center">
-                                    <i data-lucide="star" class="w-6 h-6 text-orange-600 mr-3"></i>
-                                    <span class="cinzel text-lg"><strong>Materials Provided</strong></span>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- About Amina Hood -->
-                        <div class="bg-white bg-opacity-90 rounded-2xl p-6">
-                            <h4 class="text-2xl font-bold text-purple-900 mb-4 cinzel">About Amina Hood</h4>
-                            <div class="space-y-3 cinzel text-purple-700">
-                                <p>🎩 <strong>Master Milliner & Artist</strong></p>
-                                <p>📰 <strong>Featured in:</strong> Vogue, L'Official</p>
-                                <p>🏛️ <strong>Metropolitan Museum of Art</strong></p>
-                                <p>✨ Creates distinctive, artful hats that celebrate individuality</p>
-                                <p>🎨 Extraordinary expertise in professional millinery</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="bg-white bg-opacity-90 rounded-2xl p-6 mb-8">
-                        <h4 class="text-2xl font-bold text-purple-900 mb-4 cinzel text-center">What to Bring</h4>
-                        <div class="grid md:grid-cols-3 gap-4 text-center">
-                            <div class="space-y-2">
-                                <div class="text-3xl">👒</div>
-                                <p class="cinzel text-purple-700"><strong>Option 1:</strong><br>Bring a hat to enhance</p>
-                            </div>
-                            <div class="space-y-2">
-                                <div class="text-3xl">✏️</div>
-                                <p class="cinzel text-purple-700"><strong>Option 2:</strong><br>Come with design ideas</p>
-                            </div>
-                            <div class="space-y-2">
-                                <div class="text-3xl">😊</div>
-                                <p class="cinzel text-purple-700"><strong>Option 3:</strong><br>Just bring yourself!</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="text-center">
-                        <p class="text-white text-xl mb-6 cinzel">
-                            🚨 <strong>RSVP Required</strong> - Contact Scott to reserve your spot! 🚨
-                        </p>
-                        <div class="space-y-4">
-                            <a href="https://forms.gle/oKrFaMESzjM6Khxm7" target="_blank" class="inline-block bg-white text-orange-600 px-8 py-4 rounded-full font-bold text-xl shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300 cinzel mr-4">
-                                🎨 RSVP for Amina Hood Workshop
-                            </a>
-                            <button class="bg-purple-700 text-white px-8 py-4 rounded-full font-bold text-xl shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300 cinzel">
-                                📱 Tell Your Friends!
-                            </button>
+                        <div class="bg-white bg-opacity-90 rounded-2xl p-6 max-w-3xl mx-auto">
+                            <p class="text-purple-800 cinzel text-lg leading-relaxed mb-4">
+                                What a great experience! We owe <strong>Dennita Sewell</strong> and <strong>Maria Behnen</strong> a tremendous amount of gratitude for opening up the incredible Fusion on First workshop to us. Everyone was friendly and encouraging.
+                            </p>
+                            <p class="text-purple-800 cinzel text-lg leading-relaxed">
+                                <strong>Amina Hood</strong>, the visiting delightful milliner, couldn't have been more engaging and energetic. It was a pleasure to have FIDM's students join us and to share in Ms. Hood's Hat-Making Lecture. We are on a roll!
+                            </p>
                         </div>
                     </div>
                 </div>
             </section>
 
-            <!-- Regular Workshop Schedule -->
+            <!-- Workshop Photos -->
             <section class="mb-16">
                 <h2 class="text-4xl font-bold text-center text-purple-900 mb-12 cinzel">
-                    Additional Workshop Opportunity
+                    📸 Workshop Photos
                 </h2>
-                
+                <div class="bg-white bg-opacity-95 rounded-3xl p-8 shadow-xl">
+                    <div class="grid md:grid-cols-4 gap-4">
+                        <div class="rounded-2xl overflow-hidden shadow-lg card-hover photo-hover cursor-pointer" onclick="openModal('hatmakingphotos/04BDC603-319E-4FED-B6F5-83975C9FC945.jpeg', 'Hat Making Workshop')">
+                            <img src="hatmakingphotos/04BDC603-319E-4FED-B6F5-83975C9FC945.jpeg" alt="Hat Making Workshop Photo" class="w-full h-48 object-cover">
+                        </div>
+                        <div class="rounded-2xl overflow-hidden shadow-lg card-hover photo-hover cursor-pointer" onclick="openModal('hatmakingphotos/11B234DF-763E-4627-9C07-9DDE7AE72C51.jpeg', 'Hat Making Workshop')">
+                            <img src="hatmakingphotos/11B234DF-763E-4627-9C07-9DDE7AE72C51.jpeg" alt="Hat Making Workshop Photo" class="w-full h-48 object-cover">
+                        </div>
+                        <div class="rounded-2xl overflow-hidden shadow-lg card-hover photo-hover cursor-pointer" onclick="openModal('hatmakingphotos/19E72737-0670-424E-A801-0785BA67E522.jpeg', 'Hat Making Workshop')">
+                            <img src="hatmakingphotos/19E72737-0670-424E-A801-0785BA67E522.jpeg" alt="Hat Making Workshop Photo" class="w-full h-48 object-cover">
+                        </div>
+                        <div class="rounded-2xl overflow-hidden shadow-lg card-hover photo-hover cursor-pointer" onclick="openModal('hatmakingphotos/221141CC-EFB4-4FDE-93E3-54CEFC547626.jpeg', 'Hat Making Workshop')">
+                            <img src="hatmakingphotos/221141CC-EFB4-4FDE-93E3-54CEFC547626.jpeg" alt="Hat Making Workshop Photo" class="w-full h-48 object-cover">
+                        </div>
+                        <div class="rounded-2xl overflow-hidden shadow-lg card-hover photo-hover cursor-pointer" onclick="openModal('hatmakingphotos/28EDDF0E-023F-419E-8B54-0A67AED03681.jpeg', 'Hat Making Workshop')">
+                            <img src="hatmakingphotos/28EDDF0E-023F-419E-8B54-0A67AED03681.jpeg" alt="Hat Making Workshop Photo" class="w-full h-48 object-cover">
+                        </div>
+                        <div class="rounded-2xl overflow-hidden shadow-lg card-hover photo-hover cursor-pointer" onclick="openModal('hatmakingphotos/410F92C4-66F3-4170-8E4A-5D339BFF9432.jpeg', 'Hat Making Workshop')">
+                            <img src="hatmakingphotos/410F92C4-66F3-4170-8E4A-5D339BFF9432.jpeg" alt="Hat Making Workshop Photo" class="w-full h-48 object-cover">
+                        </div>
+                        <div class="rounded-2xl overflow-hidden shadow-lg card-hover photo-hover cursor-pointer" onclick="openModal('hatmakingphotos/5310BDE6-0492-4299-A32E-44832BDD584C.jpeg', 'Hat Making Workshop')">
+                            <img src="hatmakingphotos/5310BDE6-0492-4299-A32E-44832BDD584C.jpeg" alt="Hat Making Workshop Photo" class="w-full h-48 object-cover">
+                        </div>
+                        <div class="rounded-2xl overflow-hidden shadow-lg card-hover photo-hover cursor-pointer" onclick="openModal('hatmakingphotos/664F7C8B-0BBE-423C-8529-AE215A7085AD.jpeg', 'Hat Making Workshop')">
+                            <img src="hatmakingphotos/664F7C8B-0BBE-423C-8529-AE215A7085AD.jpeg" alt="Hat Making Workshop Photo" class="w-full h-48 object-cover">
+                        </div>
+                        <div class="rounded-2xl overflow-hidden shadow-lg card-hover photo-hover cursor-pointer" onclick="openModal('hatmakingphotos/7F5B313E-A2B5-48A9-BDA2-2B441F873F30.jpeg', 'Hat Making Workshop')">
+                            <img src="hatmakingphotos/7F5B313E-A2B5-48A9-BDA2-2B441F873F30.jpeg" alt="Hat Making Workshop Photo" class="w-full h-48 object-cover">
+                        </div>
+                        <div class="rounded-2xl overflow-hidden shadow-lg card-hover photo-hover cursor-pointer" onclick="openModal('hatmakingphotos/830F9619-D0C8-4434-AE91-FD00091CAFF3.jpeg', 'Hat Making Workshop')">
+                            <img src="hatmakingphotos/830F9619-D0C8-4434-AE91-FD00091CAFF3.jpeg" alt="Hat Making Workshop Photo" class="w-full h-48 object-cover">
+                        </div>
+                        <div class="rounded-2xl overflow-hidden shadow-lg card-hover photo-hover cursor-pointer" onclick="openModal('hatmakingphotos/9F33C05C-E592-4304-A9BE-804DB0AD7990.jpeg', 'Hat Making Workshop')">
+                            <img src="hatmakingphotos/9F33C05C-E592-4304-A9BE-804DB0AD7990.jpeg" alt="Hat Making Workshop Photo" class="w-full h-48 object-cover">
+                        </div>
+                        <div class="rounded-2xl overflow-hidden shadow-lg card-hover photo-hover cursor-pointer" onclick="openModal('hatmakingphotos/C63223FB-8D82-4A00-9DD2-A97E1C618851.jpeg', 'Hat Making Workshop')">
+                            <img src="hatmakingphotos/C63223FB-8D82-4A00-9DD2-A97E1C618851.jpeg" alt="Hat Making Workshop Photo" class="w-full h-48 object-cover">
+                        </div>
+                        <div class="rounded-2xl overflow-hidden shadow-lg card-hover photo-hover cursor-pointer" onclick="openModal('hatmakingphotos/DE193606-DE27-4C41-A18E-6A4579E60A09.jpeg', 'Hat Making Workshop')">
+                            <img src="hatmakingphotos/DE193606-DE27-4C41-A18E-6A4579E60A09.jpeg" alt="Hat Making Workshop Photo" class="w-full h-48 object-cover">
+                        </div>
+                        <div class="rounded-2xl overflow-hidden shadow-lg card-hover photo-hover cursor-pointer" onclick="openModal('hatmakingphotos/E20F80E0-A497-451A-BF0E-8B133EC58AA2.jpeg', 'Hat Making Workshop')">
+                            <img src="hatmakingphotos/E20F80E0-A497-451A-BF0E-8B133EC58AA2.jpeg" alt="Hat Making Workshop Photo" class="w-full h-48 object-cover">
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Final Workshop - March 28 -->
+            <section class="mb-16">
+                <h2 class="text-4xl font-bold text-center text-purple-900 mb-12 cinzel">
+                    The Final Workshop — Don't Miss It!
+                </h2>
+
                 <div class="flex justify-center">
-                    <!-- March 28th Special Workshop -->
-                    <div class="bg-gradient-to-br from-indigo-400 to-purple-600 rounded-3xl p-8 shadow-xl card-hover max-w-md">
-                        <h3 class="text-3xl font-bold text-white mb-6 cinzel">
-                            🎪 March Workshop
+                    <div class="bg-gradient-to-br from-indigo-400 to-purple-600 rounded-3xl p-8 shadow-xl card-hover max-w-lg w-full">
+                        <h3 class="text-3xl font-bold text-white mb-6 cinzel text-center">
+                            🎪 March 28th Workshop
                         </h3>
                         <div class="space-y-4 mb-6">
                             <div class="flex items-center">
                                 <i data-lucide="calendar" class="w-6 h-6 text-yellow-300 mr-4"></i>
-                                <span class="text-white cinzel text-lg">March 28th</span>
+                                <span class="text-white cinzel text-lg"><strong>March 28th</strong></span>
                             </div>
                             <div class="flex items-center">
                                 <i data-lucide="clock" class="w-6 h-6 text-yellow-300 mr-4"></i>
-                                <span class="text-white cinzel text-lg">1:00 PM - 4:00 PM</span>
+                                <span class="text-white cinzel text-lg">1:00 PM – 4:00 PM</span>
+                            </div>
+                            <div class="flex items-center">
+                                <i data-lucide="map-pin" class="w-6 h-6 text-yellow-300 mr-4"></i>
+                                <span class="text-white cinzel text-lg">Fusion on First</span>
                             </div>
                             <div class="flex items-center">
                                 <i data-lucide="users" class="w-6 h-6 text-yellow-300 mr-4"></i>
-                                <span class="text-white cinzel text-lg">All skill levels</span>
+                                <span class="text-white cinzel text-lg">All skill levels welcome</span>
                             </div>
                         </div>
                         <p class="text-yellow-100 mb-6 cinzel text-lg leading-relaxed">
-                            Alternative workshop opportunity for those who can't attend the February 23rd special session. 
-                            Create beautiful hats with our regular instructors and community guidance.
+                            This is the last hat-making workshop before the Parade on April 5th — your final chance to create the perfect hat! Tell your friends and bring the whole family.
                         </p>
-                        <button class="bg-yellow-300 text-indigo-700 px-6 py-3 rounded-full font-bold shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300 cinzel">
-                            Register for March Workshop
-                        </button>
+                        <div class="text-center">
+                            <a href="joinus.html" class="inline-block bg-yellow-300 text-indigo-700 px-8 py-3 rounded-full font-bold shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300 cinzel">
+                                💌 Contact Us to Join
+                            </a>
+                        </div>
                     </div>
+                </div>
             </section>
 <!-- Workshop Flyers Section -->
 <section class="mb-16">
@@ -390,3 +417,31 @@
                 <span class="text-yellow-300">📧 <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="95fcfbf3fad5f0f4e6e1f0e7e5f4e7f4f1f0f8f4e1effaf7f4f9f9bbf6faf8">[email&#160;protected]</a></span>
                 <span class="text-pink-300">📱 Follow us on social media!</span>
             </div>
+        </div>
+    </footer>
+
+    <script>
+        lucide.createIcons();
+
+        function openModal(imageSrc, caption) {
+            const modal = document.getElementById('photoModal');
+            const modalImage = document.getElementById('modalImage');
+            modalImage.src = imageSrc;
+            modalImage.alt = caption || 'Workshop Photo';
+            modal.classList.add('show');
+        }
+
+        function closeModal() {
+            document.getElementById('photoModal').classList.remove('show');
+        }
+
+        document.getElementById('photoModal').addEventListener('click', function(e) {
+            if (e.target === this) closeModal();
+        });
+
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') closeModal();
+        });
+    </script>
+</body>
+</html>

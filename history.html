@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>History - Easter Parade Matzo Ball</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <style>
+        .cinzel { font-family: 'Cinzel', serif; }
+
+        body {
+            font-family: 'Cinzel', serif;
+        }
+
+        .bg-with-overlay {
+            background-image:
+                linear-gradient(45deg, rgba(255, 196, 0, 0.7), rgba(255, 64, 129, 0.6), rgba(138, 43, 226, 0.7)),
+                url('your-background-image.jpg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            background-repeat: no-repeat;
+        }
+
+        .card-hover {
+            transition: all 0.3s ease;
+        }
+
+        .card-hover:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+        }
+
+        .slide-in {
+            animation: slideIn 1s ease-out;
+        }
+
+        @keyframes slideIn {
+            from { opacity: 0; transform: translateY(50px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .prose-section p {
+            margin-bottom: 1.25rem;
+            line-height: 1.9;
+        }
+
+        .divider {
+            border: none;
+            height: 3px;
+            background: linear-gradient(to right, #a855f7, #ec4899, #f59e0b);
+            border-radius: 9999px;
+            margin: 2.5rem 0;
+        }
+    </style>
+</head>
+<body class="min-h-screen bg-with-overlay relative overflow-x-hidden">
+
+    <!-- Header with Logo and Navigation -->
+    <header class="relative z-40 pt-6 pb-2">
+        <div class="text-center mb-6">
+            <div class="inline-block w-24 h-24 mb-4">
+                <img src="logo.png" alt="Easter Parade Matzo Ball Logo" class="w-full h-full object-contain">
+            </div>
+            <h1 class="text-2xl font-bold text-purple-900 cinzel">
+                Easter Parade Matzo Ball
+            </h1>
+        </div>
+
+        <!-- Navigation -->
+        <nav class="px-6">
+            <div class="max-w-7xl mx-auto">
+                <div class="flex justify-center">
+                    <div class="flex flex-wrap justify-center space-x-2 md:space-x-6">
+                        <a href="index.html" class="px-4 py-2 rounded-full font-medium transition-all duration-300 text-purple-900 hover:bg-white hover:bg-opacity-70 cinzel">
+                            🏠 Home
+                        </a>
+                        <a href="hatmaking.html" class="px-4 py-2 rounded-full font-medium transition-all duration-300 text-purple-900 hover:bg-white hover:bg-opacity-70 cinzel">
+                            👒 Hat Making
+                        </a>
+                        <a href="photos.html" class="px-4 py-2 rounded-full font-medium transition-all duration-300 text-purple-900 hover:bg-white hover:bg-opacity-70 cinzel">
+                            📸 Photos
+                        </a>
+                        <a href="history.html" class="px-4 py-2 rounded-full font-medium transition-all duration-300 bg-white text-purple-700 shadow-lg scale-105 cinzel">
+                            📖 History
+                        </a>
+                        <a href="joinus.html" class="px-4 py-2 rounded-full font-medium transition-all duration-300 text-purple-900 hover:bg-white hover:bg-opacity-70 cinzel">
+                            💌 Join Us
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main class="relative z-30 px-6 pb-16 slide-in">
+        <div class="max-w-4xl mx-auto">
+
+            <!-- Page Header -->
+            <section class="text-center mb-14">
+                <h1 class="text-5xl md:text-6xl font-bold text-purple-900 mb-4 cinzel">
+                    What's It All About? 📖
+                </h1>
+                <p class="text-2xl text-purple-700 cinzel">The History</p>
+            </section>
+
+            <!-- Main Narrative -->
+            <div class="bg-white bg-opacity-95 rounded-3xl p-8 md:p-12 shadow-2xl prose-section text-purple-800 cinzel text-lg">
+
+                <!-- Downtown Phoenix -->
+                <p>In the early 1980s, Phoenix was a blank slate. Downtown Phoenix had virtually no life in it after five o'clock. It was a time before there was internet and cell phones. Facebook and Amazon did not exist.</p>
+
+                <p>When Terry Goddard became Mayor of Phoenix, Downtown Phoenix began to change quickly. The ensuing Bond Election brought much needed dollars and focus to downtown Phoenix, giving support and new energy to the arts and culture organizations of Central Phoenix. Terry launched the Phoenix Arts Commission, giving credence and budget to artists and art projects in Phoenix.</p>
+
+                <p>Phoenix was growing up. Central Avenue became the Boulevard of Palo Brea. The Phoenix Art Museum doubled in size. It was the beginning of populism in Phoenix, and the diminishment of the old guard, the Phoenix Forty. The new Council Districts were gaining grassroots steam and leaders.</p>
+
+                <hr class="divider">
+
+                <!-- Estelle's Bistro -->
+                <div class="text-center mb-6">
+                    <span class="text-4xl">🎹</span>
+                    <h2 class="text-3xl font-bold text-purple-900 mt-3 mb-1 cinzel">Estelle's Bistro</h2>
+                </div>
+
+                <p>Estelle's Bistro opened in the Hotel San Carlos at Central &amp; Monroe in 1983, just as life was beginning to bubble up in downtown. Overcoming downtown Phoenix's reputation as a place to avoid took a lot of work.</p>
+
+                <p>Estelle had great hopes for Phoenix. Her family moved to Phoenix from Boston and Estelle went to Arcadia High School. She had a vision of Phoenix becoming a center for the arts where artists could actually live and perform. She wanted the Bistro to be a lounge of learning for jazz artists to develop their cabaret skills in an intimate setting, like the Hotel Carlisle and Algonquin in New York City. In order to attract the Scottsdale and Paradise Valley crowd, monthly shows were written and produced which had a tinge of humor and quirkiness:</p>
+
+                <ul class="list-disc list-inside space-y-3 pl-4 mb-6">
+                    <li><em>Trout on Trout</em>: a performance of Schubert's Trout Quintet while serving fresh water trout.</li>
+                    <li>An evening dedicated to the lieder written by Alma Mahler (Gustav's wife) plus a drag queen performance of Tom Lehrer's hilarious song "Alma."</li>
+                    <li>An all-Gershwin evening starring the Keith Greko Group, featuring Lou Garno and Vocalist Maryann McCall. Excerpts from <em>Porgy and Bess</em> featuring Sylvia Howard and Bill Collins. <em>Rhapsody in Blue</em> with Jon Hanks on piano.</li>
+                    <li>Five days a week, Prince Shell played the piano at cocktail hours.</li>
+                </ul>
+
+                <hr class="divider">
+
+                <!-- The First Parade -->
+                <div class="text-center mb-6">
+                    <span class="text-4xl">🥚🌸🥯</span>
+                    <h2 class="text-3xl font-bold text-purple-900 mt-3 mb-1 cinzel">The First Parade — 1985</h2>
+                </div>
+
+                <p>The first Palm Lane Easter Parade &amp; Matzo Ball was held in 1985. It was an idea Estelle Speros, Bruce MacDonald and Scott Jacobson, co-owners of Estelle's Bistro, launched as a thank you to their customers, most of whom lived in the Encanto and Coronado neighborhoods.</p>
+
+                <p>When they thought of the idea of the Easter Parade &amp; Matzo Ball they just knew it was a good one. The idea of a dough-full dumpling waltzing at an imaginary Passover Cotillion, dancing to "Go Down Moses," tickled and excited them. The Matzo Ball and the Easter Egg would become friends, if not great dancers, like Fred and Adele Astaire.</p>
+
+                <p>In order to encourage folks to wear great hats like in the New York City Easter Parade on Fifth Avenue, several hat-making parties were held in people's private homes. Hat-making and drinking wine, it turned out, was a great glue for making fun memories.</p>
+
+                <p>The first Not-Necessarily-Annual Palm Lane Easter Parade and Matzoh Ball was launched in 1985. There was no pre-parade publicity; there was no official invitation list. No market research. It was free. All homes along the parade route throughout the Encanto neighborhood were invited. Friends and customers of the Bistro were encouraged to invite their friends and families. It was a person to person parade.</p>
+
+                <p>Several hundred people showed up to enjoy the Sunday afternoon on Palm Lane and play games at Central and Palm Lane. Great hats, decorated convertibles and a stream of optimistic neighbors were celebrating the rebirth of Central Phoenix.</p>
+
+                <p>Governor Mofford offered to get us egg rolls from her favorite Chinese restaurant. We asked for 100. They brought 1,000! It was a hot day and everything became mush. We had Samba Zarco performing great music. The Egg Toss was huge. One caterer created a replica of Palo Verde Nuclear Generating Station out of chopped liver. Three containment towers, after a while in the sun, became gelatinous masses of brown goop.</p>
+
+                <p>Estelle's Bistro customers and friends were the Central Phoenix crowd, the journalists at the Phoenix New Times and the Arizona Republic/Phoenix Gazette. Scrabble players and New York Times readers came to Estelle's Bistro for Sunday brunch; museum and theater goers met at Estelle's Bistro bar to listen to Prince Shell play jazz.</p>
+
+                <p>For the first time, Phoenicians felt engaged in building a better, more diverse and sophisticated Phoenix.</p>
+
+                <p>A year later Estelle's Bistro was forced to close because the huge air conditioner in the Hotel San Carlos died, and with it great dreams.</p>
+
+                <hr class="divider">
+
+                <!-- Estelle MacDonald -->
+                <div class="text-center mb-6">
+                    <span class="text-4xl">🌸</span>
+                    <h2 class="text-3xl font-bold text-purple-900 mt-3 mb-1 cinzel">Estelle Speros MacDonald</h2>
+                </div>
+
+                <p>Estelle and Jana were close friends.</p>
+
+                <p>Estelle moved to Boston with her husband, Bruce MacDonald, who became development director at the Berklee College of Music. Bruce and Estelle were suddenly hanging with music giants like Gary Burton, Roy Hargrove, Quincy Jones and Melissa Etheridge — all Berklee School graduates and teachers. They were soon involved in supporting gay rights issues with fundraisers for Representative Gerry Studds, the first elected official to come out while serving in office, and Barney Frank, who came out later.</p>
+
+                <p>Estelle was not a calm person. Estelle was Greek. Bruce was a Scotsman and very laid back. Estelle was always on the move, every moment of her life she was multitasking and creating. It was music and artists that filled their life with joy and inspiration.</p>
+
+                <p>Estelle opened a large studio space under the freeway near Logan Airport, during the endless Big Dig years, where she was able to create large craft pieces for parades and events in Boston. Estelle reshaped many of Boston's most traditional events and parades. She did cotillions and weddings, huge parties on Cape Cod. Her love for the Greek Orthodox Church, the Church her family originally attended, brought her great joy when she was able to help them shape events. Feta and baklava ran through her veins.</p>
+
+                <p class="font-bold text-purple-900 text-xl text-center italic">Estelle made everything sparkle.</p>
+
+                <hr class="divider">
+
+                <!-- Jana Bommersbach -->
+                <div class="text-center mb-6">
+                    <span class="text-4xl">⭐</span>
+                    <h2 class="text-3xl font-bold text-purple-900 mt-3 mb-1 cinzel">Jana Bommersbach</h2>
+                </div>
+
+                <p class="font-bold text-purple-900 text-xl text-center italic mb-6">Jana Bommersbach was a sparkler.</p>
+
+                <p>Jana Bommersbach, from North Dakota, was an acclaimed journalist whose work encompassed every facet of the profession. She was a reporter and editor for both weekly and daily newspapers, as well as a TV commentator.</p>
+
+                <p>She was an author of seven books — many of the novels set in Phoenix — and thousands of columns and magazine news stories. Her first book was the nonfictional account of an infamous 1932 murder, <em>"The Trunk Murderess: Winnie Ruth Judd,"</em> and led to her selection as the top 2010 author in Arizona as well as a nomination for a national mystery book award. Through her lengthy career, Jana's intense curiosity and methodical approach to research, matched with her skill and flair for writing, earned her local and national honors too numerous to list.</p>
+
+                <p>But if you knew Jana personally, you know there was one thing she loved perhaps more, but certainly as much, as research and writing — and that was a good party. She loved it all: the planning, the dressing up and the pre-, during and post-event sessions. And she celebrated every holiday thoroughly.</p>
+
+                <p>Jana's favorite holiday was undoubtedly Christmas, her home annually becoming a Smithsonian Christmas collection, but Easter rivaled it closely. Designing an Easter hat was a blast for her (one memorable one had dyed eggs hanging from its brim).</p>
+
+                <p>Jana was friends with Phoenix royalty. When Jana would appear at the annual Easter Celebration at Taliesin West, dressed in Easter finery, she would make her way through the sea of crowded tables to sit beside Olgivanna Wright, the Queen of Taliesin West. The three hundred Easter Sunday attendees knew the brunch would begin now that Jana Bommersbach was by Mrs. Wright's side.</p>
+
+                <p>Attending Taliesin West's fancy Easter brunch was a delight. But (sorry, Taliesin) there was nothing like the Easter Parade/Matzo Ball for wacky, creative FUN! She would have been so pleased with its resurrection, and she would have LOVED celebrating it at the Abbey, the visionary project of her friend, Terry Goddard.</p>
+
+                <p class="font-bold text-purple-900 text-xl text-center italic">We were all a corsage on the lapel of Jana's life. We loved being there!</p>
+
+            </div>
+
+            <!-- Honoree tribute banner -->
+            <div class="mt-10 bg-gradient-to-r from-purple-600 to-pink-600 rounded-3xl p-6 text-center shadow-xl">
+                <p class="text-2xl font-bold text-white cinzel">
+                    We miss and are thankful for them — their legacy lives on in every celebration! 💖
+                </p>
+            </div>
+
+            <!-- Back to Home -->
+            <div class="text-center mt-10">
+                <a href="index.html" class="inline-block bg-white text-purple-700 px-8 py-4 rounded-full font-bold text-lg shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300 cinzel">
+                    🏠 Back to Home
+                </a>
+            </div>
+
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="relative z-30 bg-purple-900 text-white py-8 mt-16">
+        <div class="max-w-6xl mx-auto px-6 text-center">
+            <div class="flex justify-center items-center space-x-4 mb-4">
+                <div class="text-3xl">🥯</div>
+                <h3 class="text-2xl font-bold cinzel">
+                    Easter Parade Matzo Ball
+                </h3>
+                <div class="text-3xl">🌸</div>
+            </div>
+            <p class="cinzel">
+                Bringing joy, creativity, and community together • One hat at a time 🎩
+            </p>
+            <div class="mt-4">
+                <span class="text-yellow-300">📧 info@easterparadematzoball.com</span>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+</html>

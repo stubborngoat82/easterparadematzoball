@@ -82,24 +82,20 @@ exports.handler = async (event) => {
 };
 
 async function recordOrderToSheets(session) {
-  // Parse service account credentials — handles common formatting issues
-  const raw = process.env.GOOGLE_SERVICE_ACCOUNT_JSON;
-  if (!raw) throw new Error('GOOGLE_SERVICE_ACCOUNT_JSON env var is not set');
-
-  // Strip surrounding quotes, normalize escaped newlines in the private key
-  const cleaned = raw
-    .trim()
-    .replace(/^["']|["']$/g, '')   // remove surrounding quotes if present
-    .replace(/\\n/g, '\n');         // convert literal \n to real newlines in private_key
-
+  // Load service account credentials
+  // For local dev: set GOOGLE_SERVICE_ACCOUNT_KEY_FILE to the path of the downloaded JSON key file
+  // For Netlify production: set GOOGLE_SERVICE_ACCOUNT_JSON to the minified single-line JSON
   let credentials;
-  try {
-    credentials = JSON.parse(cleaned);
-  } catch (err) {
-    // Log the first 80 chars to diagnose format issues without exposing the full key
-    console.error('JSON parse failed. Raw value starts with:', raw.slice(0, 80));
-    console.error('Parse error:', err.message);
-    throw new Error(`Failed to parse GOOGLE_SERVICE_ACCOUNT_JSON: ${err.message}`);
+  if (process.env.GOOGLE_SERVICE_ACCOUNT_KEY_FILE) {
+    credentials = require(process.env.GOOGLE_SERVICE_ACCOUNT_KEY_FILE);
+  } else {
+    const raw = process.env.GOOGLE_SERVICE_ACCOUNT_JSON;
+    if (!raw) throw new Error('Set GOOGLE_SERVICE_ACCOUNT_KEY_FILE or GOOGLE_SERVICE_ACCOUNT_JSON');
+    try {
+      credentials = JSON.parse(raw.trim().replace(/^["']|["']$/g, ''));
+    } catch (err) {
+      throw new Error(`Failed to parse GOOGLE_SERVICE_ACCOUNT_JSON: ${err.message}`);
+    }
   }
 
   const auth = new google.auth.GoogleAuth({

@@ -1,0 +1,11 @@
+{
+  "name": "easterparadematzoball",
+  "version": "1.0.0",
+  "description": "Easter Parade Matzo Ball website — serverless functions",
+  "private": true,
+  "dependencies": {
+    "googleapis": "^140.0.0",
+    "netlify": "^21.6.0",
+    "stripe": "^14.0.0"
+  }
+}

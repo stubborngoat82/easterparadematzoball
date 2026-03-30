@@ -15,14 +15,32 @@
 
 const stripe = require('stripe')(process.env.STRIPE_SECRET_KEY);
 
-// Stripe Price IDs — map each size to its Price ID from the Stripe dashboard
+// Stripe Price IDs — keyed by "Color|Size"
 const PRICE_IDS = {
-  S:    'price_1TGlLHEPNaqEvCxlaB15AIRg',  // $25 — S, M, L, XL
-  M:    'price_1TGlLHEPNaqEvCxlaB15AIRg',
-  L:    'price_1TGlLHEPNaqEvCxlaB15AIRg',
-  XL:   'price_1TGlLHEPNaqEvCxlaB15AIRg',
-  XXL:  'price_1TGlLpEPNaqEvCxlUw5p93xU',  // $30 — XXL, XXXL
-  XXXL: 'price_1TGlLpEPNaqEvCxlUw5p93xU',
+  'White|S':             'price_1TGnDfEPNaqEvCxlalLJHD45',
+  'White|M':             'price_1TGnDhEPNaqEvCxl1YO2nCSF',
+  'White|L':             'price_1TGnDjEPNaqEvCxlqyxNw5jo',
+  'White|XL':            'price_1TGnDkEPNaqEvCxlRrWkaUEU',
+  'White|XXL':           'price_1TGnDmEPNaqEvCxlfQLofK2S',
+  'White|XXXL':          'price_1TGnDoEPNaqEvCxllNxPOK61',
+  'Spearmint|S':         'price_1TGnDpEPNaqEvCxlhYu4Qaaj',
+  'Spearmint|M':         'price_1TGnDrEPNaqEvCxlCwiAxfZy',
+  'Spearmint|L':         'price_1TGnDsEPNaqEvCxl2OaPrnOa',
+  'Spearmint|XL':        'price_1TGnDvEPNaqEvCxlN2dVEpyH',
+  'Spearmint|XXL':       'price_1TGnDxEPNaqEvCxlAsR2DjNV',
+  'Spearmint|XXXL':      'price_1TGnDyEPNaqEvCxl42JzlNaj',
+  'Sky Blue|S':          'price_1TGnE0EPNaqEvCxlaqZlX6fx',
+  'Sky Blue|M':          'price_1TGnE1EPNaqEvCxl4OzIZibK',
+  'Sky Blue|L':          'price_1TGnE3EPNaqEvCxls4QPeKqh',
+  'Sky Blue|XL':         'price_1TGnE5EPNaqEvCxlRUwRkOdG',
+  'Sky Blue|XXL':        'price_1TGnE6EPNaqEvCxlro1fFSfT',
+  'Sky Blue|XXXL':       'price_1TGnE8EPNaqEvCxlvczrJgrL',
+  'Vintage Gold|S':      'price_1TGnE9EPNaqEvCxlI91cFRBt',
+  'Vintage Gold|M':      'price_1TGnEBEPNaqEvCxlRsFv7b0Y',
+  'Vintage Gold|L':      'price_1TGnEDEPNaqEvCxlEnc0GUeo',
+  'Vintage Gold|XL':     'price_1TGnEEEPNaqEvCxldCd4sPrB',
+  'Vintage Gold|XXL':    'price_1TGnEGEPNaqEvCxl5D0trvnM',
+  'Vintage Gold|XXXL':   'price_1TGnEHEPNaqEvCxlRVFYtk2V',
 };
 
 exports.handler = async (event) => {
@@ -47,10 +65,11 @@ exports.handler = async (event) => {
     return { statusCode: 400, body: 'Name and email are required' };
   }
 
-  // Build Stripe line items using Price IDs
+  // Build Stripe line items using Price IDs (keyed by color + size)
   const lineItems = cart.map(item => {
-    const priceId = PRICE_IDS[item.size];
-    if (!priceId) throw new Error(`Invalid size: ${item.size}`);
+    const key = `${item.color}|${item.size}`;
+    const priceId = PRICE_IDS[key];
+    if (!priceId) throw new Error(`No price found for: ${key}`);
     return {
       price: priceId,
       quantity: item.qty,
@@ -59,10 +78,7 @@ exports.handler = async (event) => {
 
   // Sales tax — 8.6% on shirt subtotal only (not shipping)
   const TAX_RATE = 0.086;
-  const shirtSubtotalCents = cart.reduce((sum, item) => {
-    const unitCents = item.size === 'XXL' || item.size === 'XXXL' ? 3000 : 2500;
-    return sum + unitCents * item.qty;
-  }, 0);
+  const shirtSubtotalCents = cart.reduce((sum, item) => sum + (item.price * 100) * item.qty, 0);
   const taxCents = Math.round(shirtSubtotalCents * TAX_RATE);
   lineItems.push({
     price_data: {

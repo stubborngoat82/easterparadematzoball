@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event T-Shirts - Easter Parade Matzo Ball</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <style>
+        .cinzel { font-family: 'Cinzel', serif; }
+        body { font-family: 'Cinzel', serif; }
+
+        .bg-with-overlay {
+            background-image:
+                linear-gradient(45deg, rgba(255, 196, 0, 0.7), rgba(255, 64, 129, 0.6), rgba(138, 43, 226, 0.7)),
+                url('your-background-image.jpg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            background-repeat: no-repeat;
+        }
+
+        .card-hover {
+            transition: all 0.3s ease;
+        }
+        .card-hover:hover {
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+        }
+
+        .slide-in {
+            animation: slideIn 1s ease-out;
+        }
+        @keyframes slideIn {
+            from { opacity: 0; transform: translateY(50px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .color-swatch {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            border: 3px solid transparent;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            display: inline-block;
+        }
+        .color-swatch:hover, .color-swatch.selected {
+            border-color: #6b21a8;
+            transform: scale(1.2);
+            box-shadow: 0 0 0 3px rgba(107, 33, 168, 0.3);
+        }
+
+        .size-btn {
+            transition: all 0.2s ease;
+        }
+        .size-btn:hover, .size-btn.selected {
+            background-color: #7e22ce;
+            color: white;
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+<body class="min-h-screen bg-with-overlay relative overflow-x-hidden">
+
+    <!-- Header with Logo and Navigation -->
+    <header class="relative z-40 pt-6 pb-2">
+        <div class="text-center mb-6">
+            <div class="inline-block w-24 h-24 mb-4">
+                <img src="logo.png" alt="Easter Parade Matzo Ball Logo" class="w-full h-full object-contain">
+            </div>
+            <h1 class="text-2xl font-bold text-purple-900 cinzel">
+                Easter Parade Matzo Ball
+            </h1>
+        </div>
+
+        <!-- Navigation -->
+        <nav class="px-6">
+            <div class="max-w-7xl mx-auto">
+                <div class="flex justify-center">
+                    <div class="flex flex-wrap justify-center space-x-2 md:space-x-6">
+                        <a href="index.html" class="px-4 py-2 rounded-full font-medium transition-all duration-300 text-purple-900 hover:bg-white hover:bg-opacity-70 cinzel">
+                            🏠 Home
+                        </a>
+                        <a href="hatmaking.html" class="px-4 py-2 rounded-full font-medium transition-all duration-300 text-purple-900 hover:bg-white hover:bg-opacity-70 cinzel">
+                            👒 Hat Making
+                        </a>
+                        <a href="photos.html" class="px-4 py-2 rounded-full font-medium transition-all duration-300 text-purple-900 hover:bg-white hover:bg-opacity-70 cinzel">
+                            📸 Photos
+                        </a>
+                        <a href="history.html" class="px-4 py-2 rounded-full font-medium transition-all duration-300 text-purple-900 hover:bg-white hover:bg-opacity-70 cinzel">
+                            📖 History
+                        </a>
+                        <a href="joinus.html" class="px-4 py-2 rounded-full font-medium transition-all duration-300 text-purple-900 hover:bg-white hover:bg-opacity-70 cinzel">
+                            💌 Join Us
+                        </a>
+                        <a href="tshirts.html" class="px-4 py-2 rounded-full font-medium transition-all duration-300 bg-white text-purple-700 shadow-lg scale-105 cinzel">
+                            👕 T-Shirts
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main class="relative z-30 px-6 pb-12 slide-in">
+        <div class="max-w-6xl mx-auto">
+
+            <!-- Page Header -->
+            <section class="text-center mb-12">
+                <h1 class="text-5xl font-bold text-purple-900 mb-4 cinzel">
+                    Event T-Shirts 👕
+                </h1>
+                <p class="text-xl text-purple-700 max-w-2xl mx-auto cinzel">
+                    Show your Easter Parade Matzo Ball pride! Order your official event shirt — available for pickup at the parade on April 5th.
+                </p>
+            </section>
+
+            <div class="grid md:grid-cols-2 gap-12 items-start">
+
+                <!-- Product Image -->
+                <div class="bg-white bg-opacity-95 rounded-3xl p-8 shadow-2xl">
+                    <img src="shirts.png" alt="Easter Parade Matzo Ball T-Shirt" class="w-full rounded-2xl object-contain max-h-96">
+                    <div class="mt-6 space-y-3">
+                        <div class="flex items-center bg-yellow-50 rounded-2xl p-4">
+                            <span class="text-2xl mr-3">💰</span>
+                            <div>
+                                <p class="font-bold text-purple-900 cinzel">Pricing</p>
+                                <p class="text-purple-700 cinzel text-sm">$25 — S, M, L, XL &nbsp;|&nbsp; $30 — XXL, XXXL</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center bg-blue-50 rounded-2xl p-4">
+                            <span class="text-2xl mr-3">🚚</span>
+                            <div>
+                                <p class="font-bold text-purple-900 cinzel">Shipping Available</p>
+                                <p class="text-purple-700 cinzel text-sm">$10 per shirt — or pick up at the parade on April 5th!</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center bg-green-50 rounded-2xl p-4">
+                            <span class="text-2xl mr-3">📦</span>
+                            <div>
+                                <p class="font-bold text-purple-900 cinzel">Pickup</p>
+                                <p class="text-purple-700 cinzel text-sm">Day-of pickup available at the parade — The Abbey, April 5th</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Order Form -->
+                <div class="bg-white bg-opacity-95 rounded-3xl p-8 shadow-2xl">
+                    <h2 class="text-3xl font-bold text-purple-900 mb-8 cinzel text-center">Place Your Order</h2>
+
+                    <form id="shirtOrderForm" class="space-y-6">
+
+                        <!-- Color Selection -->
+                        <div>
+                            <label class="block text-lg font-bold text-purple-900 mb-3 cinzel">Color</label>
+                            <div class="flex items-center space-x-4 flex-wrap gap-y-3">
+                                <div class="flex flex-col items-center space-y-1">
+                                    <div class="color-swatch selected" id="swatch-white" style="background-color: #FFFFFF; border-color: #6b21a8; box-shadow: 0 0 0 3px rgba(107,33,168,0.3);" onclick="selectColor('White', this)"></div>
+                                    <span class="text-xs cinzel text-purple-800">White</span>
+                                </div>
+                                <div class="flex flex-col items-center space-y-1">
+                                    <div class="color-swatch" id="swatch-spearmint" style="background-color: #A8D5BA;" onclick="selectColor('Spearmint', this)"></div>
+                                    <span class="text-xs cinzel text-purple-800">Spearmint</span>
+                                </div>
+                                <div class="flex flex-col items-center space-y-1">
+                                    <div class="color-swatch" id="swatch-skyblue" style="background-color: #87CEEB;" onclick="selectColor('Sky Blue', this)"></div>
+                                    <span class="text-xs cinzel text-purple-800">Sky Blue</span>
+                                </div>
+                                <div class="flex flex-col items-center space-y-1">
+                                    <div class="color-swatch" id="swatch-gold" style="background-color: #C5A028;" onclick="selectColor('Vintage Gold', this)"></div>
+                                    <span class="text-xs cinzel text-purple-800">Vintage Gold</span>
+                                </div>
+                            </div>
+                            <input type="hidden" id="selectedColor" name="color" value="White">
+                        </div>
+
+                        <!-- Size Selection -->
+                        <div>
+                            <label class="block text-lg font-bold text-purple-900 mb-3 cinzel">Size</label>
+                            <div class="flex flex-wrap gap-2">
+                                <button type="button" class="size-btn selected px-4 py-2 rounded-full border-2 border-purple-600 cinzel font-medium text-purple-900 bg-purple-700 text-white" data-size="S" data-price="25" onclick="selectSize(this)">S</button>
+                                <button type="button" class="size-btn px-4 py-2 rounded-full border-2 border-purple-600 cinzel font-medium text-purple-900" data-size="M" data-price="25" onclick="selectSize(this)">M</button>
+                                <button type="button" class="size-btn px-4 py-2 rounded-full border-2 border-purple-600 cinzel font-medium text-purple-900" data-size="L" data-price="25" onclick="selectSize(this)">L</button>
+                                <button type="button" class="size-btn px-4 py-2 rounded-full border-2 border-purple-600 cinzel font-medium text-purple-900" data-size="XL" data-price="25" onclick="selectSize(this)">XL</button>
+                                <button type="button" class="size-btn px-4 py-2 rounded-full border-2 border-purple-600 cinzel font-medium text-purple-900" data-size="XXL" data-price="30" onclick="selectSize(this)">XXL <span class="text-xs">+$5</span></button>
+                                <button type="button" class="size-btn px-4 py-2 rounded-full border-2 border-purple-600 cinzel font-medium text-purple-900" data-size="XXXL" data-price="30" onclick="selectSize(this)">XXXL <span class="text-xs">+$5</span></button>
+                            </div>
+                            <input type="hidden" id="selectedSize" name="size" value="S">
+                            <input type="hidden" id="selectedPrice" name="price" value="25">
+                        </div>
+
+                        <!-- Quantity -->
+                        <div>
+                            <label class="block text-lg font-bold text-purple-900 mb-3 cinzel">Quantity</label>
+                            <div class="flex items-center space-x-4">
+                                <button type="button" onclick="changeQty(-1)" class="w-10 h-10 rounded-full bg-purple-600 text-white font-bold text-xl hover:bg-purple-700 transition-colors">−</button>
+                                <span id="qtyDisplay" class="text-2xl font-bold text-purple-900 cinzel w-8 text-center">1</span>
+                                <button type="button" onclick="changeQty(1)" class="w-10 h-10 rounded-full bg-purple-600 text-white font-bold text-xl hover:bg-purple-700 transition-colors">+</button>
+                                <input type="hidden" id="quantity" name="quantity" value="1">
+                            </div>
+                        </div>
+
+                        <!-- Delivery Method -->
+                        <div>
+                            <label class="block text-lg font-bold text-purple-900 mb-3 cinzel">Delivery Method</label>
+                            <div class="space-y-2">
+                                <label class="flex items-center space-x-3 cursor-pointer p-3 rounded-2xl hover:bg-purple-50 transition-colors">
+                                    <input type="radio" name="delivery" value="pickup" checked class="w-5 h-5 text-purple-600" onchange="updateTotal()">
+                                    <div>
+                                        <span class="font-bold text-purple-900 cinzel">Pickup at Parade — Free</span>
+                                        <p class="text-sm text-purple-600 cinzel">The Abbey · April 5th</p>
+                                    </div>
+                                </label>
+                                <label class="flex items-center space-x-3 cursor-pointer p-3 rounded-2xl hover:bg-purple-50 transition-colors">
+                                    <input type="radio" name="delivery" value="shipping" class="w-5 h-5 text-purple-600" onchange="updateTotal()">
+                                    <div>
+                                        <span class="font-bold text-purple-900 cinzel">Ship to Me — $10/shirt</span>
+                                        <p class="text-sm text-purple-600 cinzel">Standard shipping</p>
+                                    </div>
+                                </label>
+                            </div>
+                        </div>
+
+                        <!-- Contact Info -->
+                        <div class="space-y-4">
+                            <div>
+                                <label class="block font-bold text-purple-900 mb-2 cinzel">Name *</label>
+                                <input type="text" name="name" required placeholder="Your full name" class="w-full px-4 py-3 rounded-2xl border-2 border-purple-300 focus:border-purple-600 focus:outline-none cinzel">
+                            </div>
+                            <div>
+                                <label class="block font-bold text-purple-900 mb-2 cinzel">Email *</label>
+                                <input type="email" name="email" required placeholder="your@email.com" class="w-full px-4 py-3 rounded-2xl border-2 border-purple-300 focus:border-purple-600 focus:outline-none cinzel">
+                            </div>
+                            <div>
+                                <label class="block font-bold text-purple-900 mb-2 cinzel">Phone</label>
+                                <input type="tel" name="phone" placeholder="(555) 555-5555" class="w-full px-4 py-3 rounded-2xl border-2 border-purple-300 focus:border-purple-600 focus:outline-none cinzel">
+                            </div>
+                            <div id="shippingAddressBlock" class="hidden space-y-3">
+                                <label class="block font-bold text-purple-900 mb-2 cinzel">Shipping Address</label>
+                                <input type="text" name="address" placeholder="Street address" class="w-full px-4 py-3 rounded-2xl border-2 border-purple-300 focus:border-purple-600 focus:outline-none cinzel">
+                                <div class="grid grid-cols-2 gap-3">
+                                    <input type="text" name="city" placeholder="City" class="px-4 py-3 rounded-2xl border-2 border-purple-300 focus:border-purple-600 focus:outline-none cinzel">
+                                    <input type="text" name="zip" placeholder="ZIP" class="px-4 py-3 rounded-2xl border-2 border-purple-300 focus:border-purple-600 focus:outline-none cinzel">
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Order Summary -->
+                        <div class="bg-purple-50 rounded-2xl p-5 border-2 border-purple-200">
+                            <h3 class="font-bold text-purple-900 cinzel mb-3">Order Summary</h3>
+                            <div class="space-y-1 text-sm cinzel text-purple-800">
+                                <div class="flex justify-between">
+                                    <span id="summaryItem">1 × White / S</span>
+                                    <span id="summaryItemPrice">$25.00</span>
+                                </div>
+                                <div class="flex justify-between" id="shippingRow" style="display:none!important">
+                                    <span>Shipping</span>
+                                    <span id="summaryShipping">$10.00</span>
+                                </div>
+                                <div class="border-t border-purple-300 pt-2 mt-2 flex justify-between font-bold text-base">
+                                    <span>Total</span>
+                                    <span id="summaryTotal">$25.00</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Submit -->
+                        <!-- Stripe payment integration: replace this button with Stripe Checkout or Payment Link when ready -->
+                        <button type="submit" class="w-full bg-gradient-to-r from-pink-600 to-purple-700 text-white py-4 rounded-full font-bold text-xl shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300 cinzel">
+                            🎉 Place Order
+                        </button>
+
+                        <p class="text-center text-sm text-purple-500 cinzel">
+                            Secure payment processing coming soon via Stripe
+                        </p>
+                    </form>
+
+                    <!-- Success Message -->
+                    <div id="orderSuccess" class="hidden text-center py-8">
+                        <div class="text-6xl mb-4">🎉</div>
+                        <h3 class="text-3xl font-bold text-purple-900 mb-4 cinzel">Order Received!</h3>
+                        <p class="text-lg text-purple-700 cinzel">
+                            Thanks for your order! We'll be in touch with confirmation details.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="relative z-30 bg-purple-900 text-white py-8 mt-16">
+        <div class="max-w-6xl mx-auto px-6 text-center">
+            <div class="flex justify-center items-center space-x-4 mb-4">
+                <div class="text-3xl">🥯</div>
+                <h3 class="text-2xl font-bold cinzel">
+                    Easter Parade Matzo Ball
+                </h3>
+                <div class="text-3xl">🌸</div>
+            </div>
+            <p class="cinzel">
+                Bringing joy, creativity, and community together • One hat at a time 🎩
+            </p>
+            <div class="mt-4 space-x-4">
+                <span class="text-yellow-300">📧 info@easterparadematzoball.com</span>
+                <span class="text-pink-300">📱 Follow us on social media!</span>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        lucide.createIcons();
+
+        let currentQty = 1;
+        let currentPrice = 25;
+
+        function selectColor(colorName, el) {
+            document.querySelectorAll('.color-swatch').forEach(s => {
+                s.classList.remove('selected');
+                s.style.borderColor = 'transparent';
+                s.style.boxShadow = 'none';
+                s.style.transform = 'scale(1)';
+            });
+            el.classList.add('selected');
+            el.style.borderColor = '#6b21a8';
+            el.style.boxShadow = '0 0 0 3px rgba(107,33,168,0.3)';
+            el.style.transform = 'scale(1.2)';
+            document.getElementById('selectedColor').value = colorName;
+            updateTotal();
+        }
+
+        function selectSize(btn) {
+            document.querySelectorAll('.size-btn').forEach(b => {
+                b.classList.remove('selected', 'bg-purple-700', 'text-white');
+                b.classList.add('text-purple-900');
+            });
+            btn.classList.add('selected', 'bg-purple-700', 'text-white');
+            btn.classList.remove('text-purple-900');
+            currentPrice = parseInt(btn.dataset.price);
+            document.getElementById('selectedSize').value = btn.dataset.size;
+            document.getElementById('selectedPrice').value = currentPrice;
+            updateTotal();
+        }
+
+        function changeQty(delta) {
+            currentQty = Math.max(1, currentQty + delta);
+            document.getElementById('qtyDisplay').textContent = currentQty;
+            document.getElementById('quantity').value = currentQty;
+            updateTotal();
+        }
+
+        function updateTotal() {
+            const isShipping = document.querySelector('input[name="delivery"]:checked').value === 'shipping';
+            const color = document.getElementById('selectedColor').value;
+            const size = document.getElementById('selectedSize').value;
+            const shippingCost = isShipping ? 10 * currentQty : 0;
+            const itemTotal = currentPrice * currentQty;
+            const total = itemTotal + shippingCost;
+
+            document.getElementById('summaryItem').textContent = `${currentQty} × ${color} / ${size}`;
+            document.getElementById('summaryItemPrice').textContent = `$${itemTotal}.00`;
+            document.getElementById('summaryTotal').textContent = `$${total}.00`;
+
+            const shippingRow = document.getElementById('shippingRow');
+            const shippingAddrBlock = document.getElementById('shippingAddressBlock');
+            if (isShipping) {
+                shippingRow.style.removeProperty('display');
+                document.getElementById('summaryShipping').textContent = `$${shippingCost}.00`;
+                shippingAddrBlock.classList.remove('hidden');
+            } else {
+                shippingRow.style.setProperty('display', 'none', 'important');
+                shippingAddrBlock.classList.add('hidden');
+            }
+        }
+
+        document.getElementById('shirtOrderForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            // TODO: Integrate Stripe Checkout here
+            // Example: stripe.redirectToCheckout({ lineItems: [...], mode: 'payment', ... })
+            document.getElementById('shirtOrderForm').classList.add('hidden');
+            document.getElementById('orderSuccess').classList.remove('hidden');
+        });
+    </script>
+</body>
+</html>

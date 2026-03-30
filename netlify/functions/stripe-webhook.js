@@ -82,9 +82,25 @@ exports.handler = async (event) => {
 };
 
 async function recordOrderToSheets(session) {
-  // Strip surrounding quotes if the env var was pasted with them
-  const rawJson = process.env.GOOGLE_SERVICE_ACCOUNT_JSON.trim().replace(/^["']|["']$/g, '');
-  const credentials = JSON.parse(rawJson);
+  // Parse service account credentials — handles common formatting issues
+  const raw = process.env.GOOGLE_SERVICE_ACCOUNT_JSON;
+  if (!raw) throw new Error('GOOGLE_SERVICE_ACCOUNT_JSON env var is not set');
+
+  // Strip surrounding quotes, normalize escaped newlines in the private key
+  const cleaned = raw
+    .trim()
+    .replace(/^["']|["']$/g, '')   // remove surrounding quotes if present
+    .replace(/\\n/g, '\n');         // convert literal \n to real newlines in private_key
+
+  let credentials;
+  try {
+    credentials = JSON.parse(cleaned);
+  } catch (err) {
+    // Log the first 80 chars to diagnose format issues without exposing the full key
+    console.error('JSON parse failed. Raw value starts with:', raw.slice(0, 80));
+    console.error('Parse error:', err.message);
+    throw new Error(`Failed to parse GOOGLE_SERVICE_ACCOUNT_JSON: ${err.message}`);
+  }
 
   const auth = new google.auth.GoogleAuth({
     credentials,

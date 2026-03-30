@@ -401,12 +401,15 @@
             updateTotal();
         }
 
+        const TAX_RATE = 0.086;
+
         function updateTotal() {
             const isShipping = document.querySelector('input[name="delivery"]:checked').value === 'shipping';
             const totalShirts = cart.reduce((sum, item) => sum + item.qty, 0);
             const itemsTotal = cart.reduce((sum, item) => sum + item.price * item.qty, 0);
+            const tax = Math.round(itemsTotal * TAX_RATE * 100) / 100;
             const shippingCost = isShipping && totalShirts > 0 ? 10 + (totalShirts - 1) * 2.5 : 0;
-            const total = itemsTotal + shippingCost;
+            const total = itemsTotal + tax + shippingCost;
 
             const summaryLines = document.getElementById('summaryLines');
             if (cart.length === 0) {
@@ -414,8 +417,9 @@
                 document.getElementById('summaryTotal').textContent = '$0.00';
             } else {
                 let lines = cart.map(item =>
-                    `<div class="flex justify-between"><span>${item.qty} × ${item.color} / ${item.size}</span><span>$${item.price * item.qty}</span></div>`
+                    `<div class="flex justify-between"><span>${item.qty} × ${item.color} / ${item.size}</span><span>$${(item.price * item.qty).toFixed(2)}</span></div>`
                 ).join('');
+                lines += `<div class="flex justify-between text-purple-500"><span>Sales Tax (8.6%)</span><span>$${tax.toFixed(2)}</span></div>`;
                 if (isShipping) {
                     lines += `<div class="flex justify-between"><span>Shipping</span><span>$${shippingCost.toFixed(2)}</span></div>`;
                 }

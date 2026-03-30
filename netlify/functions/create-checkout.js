@@ -57,6 +57,22 @@ exports.handler = async (event) => {
     };
   });
 
+  // Sales tax — 8.6% on shirt subtotal only (not shipping)
+  const TAX_RATE = 0.086;
+  const shirtSubtotalCents = cart.reduce((sum, item) => {
+    const unitCents = item.size === 'XXL' || item.size === 'XXXL' ? 3000 : 2500;
+    return sum + unitCents * item.qty;
+  }, 0);
+  const taxCents = Math.round(shirtSubtotalCents * TAX_RATE);
+  lineItems.push({
+    price_data: {
+      currency: 'usd',
+      product_data: { name: 'Sales Tax (8.6%)' },
+      unit_amount: taxCents,
+    },
+    quantity: 1,
+  });
+
   // Shipping line item — uses price_data since shipping is calculated dynamically
   if (delivery === 'shipping') {
     const totalShirts = cart.reduce((sum, item) => sum + item.qty, 0);

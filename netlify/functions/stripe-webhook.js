@@ -45,6 +45,8 @@
 
 const stripe       = require('stripe')(process.env.STRIPE_SECRET_KEY);
 const { google }   = require('googleapis');
+const path         = require('path');
+const fs           = require('fs');
 
 const SHEET_ID     = process.env.GOOGLE_SHEET_ID;
 const SHEET_RANGE  = 'Orders!A:L';  // Must match the sheet tab name "Orders"
@@ -87,7 +89,9 @@ async function recordOrderToSheets(session) {
   // For Netlify production: set GOOGLE_SERVICE_ACCOUNT_JSON to the minified single-line JSON
   let credentials;
   if (process.env.GOOGLE_SERVICE_ACCOUNT_KEY_FILE) {
-    credentials = require(process.env.GOOGLE_SERVICE_ACCOUNT_KEY_FILE);
+    // Resolve from project root (two levels up from netlify/functions/)
+    const keyPath = path.resolve(__dirname, '../../', process.env.GOOGLE_SERVICE_ACCOUNT_KEY_FILE);
+    credentials = JSON.parse(fs.readFileSync(keyPath, 'utf8'));
   } else {
     const raw = process.env.GOOGLE_SERVICE_ACCOUNT_JSON;
     if (!raw) throw new Error('Set GOOGLE_SERVICE_ACCOUNT_KEY_FILE or GOOGLE_SERVICE_ACCOUNT_JSON');

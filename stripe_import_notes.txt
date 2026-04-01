@@ -1,0 +1,37 @@
+Stripe product catalog import notes
+
+Important:
+Stripeâ€™s standard Product Catalog does not currently offer a native CSV import for Products/Prices in the normal dashboard flow.
+Stripeâ€™s docs say to use the Products API (and Prices API) to import a large product catalog programmatically.
+
+Files included:
+1) stripe_tshirt_catalog.csv
+   - 24 rows (4 colors x 6 sizes)
+   - One Stripe Product per row
+   - One default one-time Price per product
+
+2) import_to_stripe.py
+   - Reads the CSV
+   - Creates each product in Stripe using your chosen product_id
+   - Creates a default price on each product in the same API call
+   - Skips rows whose product_id already exists
+
+How to use:
+1) Put both files in the same folder.
+2) Set your Stripe secret key:
+   Mac/Linux:
+     export STRIPE_SECRET_KEY=sk_test_...
+   Windows PowerShell:
+     $env:STRIPE_SECRET_KEY="sk_test_..."
+3) Run:
+     python import_to_stripe.py stripe_tshirt_catalog.csv
+
+Assumptions I used:
+- Each color/size combination is its own Stripe Product because Stripeâ€™s standard catalog does not have a native â€œvariant matrixâ€ like Shopify.
+- Pricing is one-time, in USD.
+- Prices are:
+  Small / Medium / Large / XL = $25.00
+  XXL / XXXL = $30.00
+- tax_behavior is set to "unspecified" so you can rely on your Stripe Tax/default account settings if you use them.
+
+If you prefer, you can later rename "Event T-Shirt" to your actual event name by bulk editing the CSV before import.

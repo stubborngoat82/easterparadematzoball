@@ -55,7 +55,7 @@ exports.handler = async (event) => {
     return { statusCode: 400, body: 'Invalid JSON' };
   }
 
-  const { cart, delivery, contact } = body;
+  const { cart, delivery, contact, promoCode } = body;
 
   // Basic validation
   if (!cart || cart.length === 0) {
@@ -126,17 +126,27 @@ exports.handler = async (event) => {
   // Determine the base URL — works locally (netlify dev) and in production
   const baseUrl = process.env.URL || 'http://localhost:8888';
 
+  const PROMO_CODE_MAP = {
+    'EASTER20': 'promo_1TN3pOE9eSiPExOK2I7NmRm8',
+  };
+
+  const sessionParams = {
+    payment_method_types: ['card'],
+    line_items: lineItems,
+    mode: 'payment',
+    customer_email: contact.email,
+    success_url: `${baseUrl}/tshirts.html?order=success&session_id={CHECKOUT_SESSION_ID}`,
+    cancel_url:  `${baseUrl}/tshirts.html`,
+    metadata,
+  };
+
+  if (promoCode && PROMO_CODE_MAP[promoCode.toUpperCase()]) {
+    sessionParams.discounts = [{ promotion_code: PROMO_CODE_MAP[promoCode.toUpperCase()] }];
+  }
+
   let session;
   try {
-    session = await stripe.checkout.sessions.create({
-      payment_method_types: ['card'],
-      line_items: lineItems,
-      mode: 'payment',
-      customer_email: contact.email,
-      success_url: `${baseUrl}/tshirts.html?order=success&session_id={CHECKOUT_SESSION_ID}`,
-      cancel_url:  `${baseUrl}/tshirts.html`,
-      metadata,
-    });
+    session = await stripe.checkout.sessions.create(sessionParams);
   } catch (err) {
     console.error('Stripe error:', err.message);
     return { statusCode: 500, body: `Stripe error: ${err.message}` };
